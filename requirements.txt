@@ -1,0 +1,12 @@
+# --- Rasa Core and SDK ---
+rasa==3.6.21
+rasa-sdk==3.6.2
+
+# --- Transformers and its backend ---
+# Using versions compatible with Rasa 3.6.x and TensorFlow 2.12
+transformers==4.36.2
+sentencepiece==0.1.99
+torch==2.1.2
+
+# --- TensorFlow for Apple Silicon ---
+tensorflow-macos==2.12.0
