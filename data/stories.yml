@@ -1,0 +1,88 @@
+version: "3.1"
+
+stories:
+- story: Disease Info, Symptoms, and Prevention Path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_disease_info
+    entities:
+    - disease: "COVID-19"
+  - action: utter_disease_info_covid-19
+  - intent: ask_symptoms
+    entities:
+    - disease: "COVID-19"
+  - action: utter_symptoms_covid-19
+  - intent: ask_prevention
+    entities:
+    - disease: "COVID-19"
+  - action: utter_prevention_covid-19
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Vaccination Schedule Happy Path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_vaccination_schedule
+  - action: vaccination_form
+  - active_loop: vaccination_form
+  - slot_was_set:
+    - requested_slot: age
+  - intent: provide_age
+    entities:
+    - age: "2 years old"
+  - slot_was_set:
+    - age: "2 years old"
+  - action: vaccination_form
+  - slot_was_set:
+    - requested_slot: location
+  - intent: provide_location
+    entities:
+    - location: "Delhi"
+  - slot_was_set:
+    - location: "Delhi"
+  - action: vaccination_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_vaccination_schedule_info
+  - intent: thank_you
+  - action: utter_thank_you
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Outbreak Alert and Goodbye
+  steps:
+  - intent: ask_outbreak_alerts
+    entities:
+    - location: "Mumbai"
+  - action: utter_outbreak_alerts
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Generic Disease Query Path
+  steps:
+  - intent: ask_disease_info
+    entities:
+    - disease: "Chikungunya"
+  - action: utter_disease_info_generic
+  - intent: ask_symptoms
+  - action: utter_symptoms_generic
+  - intent: thank_you
+  - action: utter_thank_you
+
+- story: Stop during vaccination form
+  steps:
+  - intent: ask_vaccination_schedule
+  - action: vaccination_form
+  - active_loop: vaccination_form
+  - intent: stop
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: utter_goodbye
+
+- story: Bot Challenge Path
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
