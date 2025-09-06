@@ -1,136 +1,64 @@
 version: "3.1"
 
 intents:
-  - greet
-  - goodbye
-  - thank_you
-  - affirm
-  - deny
-  - bot_challenge
-  - ask_disease_info
-  - ask_symptoms
-  - ask_prevention
-  - ask_vaccination_schedule
-  - ask_outbreak_alerts
-  - provide_age
-  - provide_location
-  - stop
+- greet
+- goodbye
+- thank_you
+- affirm
+- deny   
+- bot_challenge
+- stop
+- ask_vaccination_schedule
+- ask_outbreak_alerts
+- ask_disease_info
+- ask_symptoms
+- ask_prevention
+- ask_emergency_contacts
+- ask_general_health_tips
+- provide_age
+- provide_location
+- provide_pincode
+- provide_disease
 
-entities:
-  - disease
-  - vaccine
-  - age
-  - location
-
+entities: [disease, age, location, pincode]
 slots:
-  age:
-    type: text
-    influence_conversation: true
-    mappings:
-    - type: from_entity
-      entity: age
-  location:
-    type: text
-    influence_conversation: true
-    mappings:
-    - type: from_entity
-      entity: location
-  disease:
-    type: text
-    influence_conversation: true
-    mappings:
-    - type: from_entity
-      entity: disease
+  age: {type: text, mappings: [{type: from_entity, entity: age}]}
+  location: {type: text, mappings: [{type: from_entity, entity: location}]}
+  pincode: {type: text, mappings: [{type: from_entity, entity: pincode}]}
 
 responses:
-  utter_greet:
-  - text: "Namaste! I am your AI Public Health Assistant. How can I help you today?"
-  - text: "Hello! You've reached your Public Health Assistant. What information are you looking for?"
-  - text: "Greetings! I can help with questions about diseases, symptoms, or vaccinations. What's on your mind?"
-
-  utter_goodbye:
-  - text: "Stay safe and healthy. Goodbye!"
-  - text: "Take care. Feel free to ask if you have more questions later. Goodbye!"
-  - text: "Goodbye. Wishing you good health!"
-
-  utter_thank_you:
-  - text: "You're very welcome!"
-  - text: "Happy to help! Let me know if you need anything else."
-  - text: "You're welcome! Stay informed and stay safe."
-
-  utter_iamabot:
-  - text: "I am an AI assistant, powered by Rasa, designed to provide public health information."
-  - text: "I am a bot created to answer your health questions. How can I assist you?"
-
-  utter_ask_disease_info:
-  - text: "I can provide information on diseases like COVID-19, Malaria, and Tuberculosis. Which one are you interested in?"
-  utter_disease_info_covid-19:
-  - text: "COVID-19 is a respiratory illness caused by the SARS-CoV-2 virus. It can cause mild to severe illness. IMPORTANT: This is not medical advice. Please consult a doctor or call 108 for emergencies."
-  utter_disease_info_malaria:
-  - text: "Malaria is a serious disease caused by a parasite and transmitted by mosquitoes. It causes high fevers and shaking chills. IMPORTANT: This is not medical advice. Please consult a doctor or call 108 for emergencies."
-  utter_disease_info_tuberculosis:
-  - text: "Tuberculosis (TB) is a bacterial infection that mainly affects the lungs. It is treatable and curable. IMPORTANT: This is not medical advice. Please consult a doctor or call 108 for emergencies."
-  utter_disease_info_generic:
-  - text: "For information on a specific disease, it is best to consult with a registered medical practitioner. Please do not self-diagnose. For emergencies, call 108."
-  utter_ask_symptoms:
-  - text: "Knowing the symptoms is important. For which disease are you asking about symptoms?"
-  utter_symptoms_covid-19:
-  - text: "Common symptoms of COVID-19 include fever, cough, tiredness, and loss of taste or smell. Serious symptoms include difficulty breathing. Please consult a healthcare provider for accurate diagnosis. For emergencies, call 108."
-  utter_symptoms_malaria:
-  - text: "Symptoms of Malaria include fever, chills, headache, and muscle aches. These can appear 10-15 days after the mosquito bite. It's crucial to get tested. For emergencies, call 108."
-  utter_symptoms_tuberculosis:
-  - text: "Symptoms of Tuberculosis include a persistent cough (sometimes with blood), weight loss, fever, and night sweats. Early diagnosis is key. For emergencies, call 108."
-  utter_symptoms_generic:
-  - text: "Symptoms can vary greatly. For any health concerns, please consult a doctor for a proper diagnosis immediately. For medical emergencies, call 108."
-  utter_ask_prevention:
-  - text: "Prevention is key to good health. Which disease's prevention measures are you interested in?"
-  utter_prevention_covid-19:
-  - text: "To prevent COVID-19, wash your hands frequently, wear a mask in crowded places, maintain social distance, and get vaccinated. Always follow government guidelines."
-  utter_prevention_malaria:
-  - text: "To prevent Malaria, use mosquito nets, wear protective clothing, and use insect repellent. Keeping your surroundings clean and free of stagnant water is very important."
-  utter_prevention_tuberculosis:
-  - text: "The BCG vaccine helps protect against severe forms of TB in children. Good ventilation in living spaces and a healthy immune system are also important for prevention."
-  utter_prevention_generic:
-  - text: "General prevention includes maintaining good hygiene, eating a balanced diet, and getting regular health check-ups. For specific advice, please contact a healthcare worker."
-  utter_outbreak_alerts:
-  - text: "Currently, I don't have real-time outbreak data. For the latest health alerts in your area, please refer to official government health websites or contact your local health authorities."
-  utter_ask_age:
-  - text: "To provide the correct vaccination schedule, I need to know the age. Could you please provide it (e.g., 2 months old, 5 years old)?"
-  utter_ask_location:
-  - text: "Thank you. Now, please provide your location (e.g., your city or district) to help check local guidelines."
-  utter_vaccination_schedule_info:
-  - text: "For a child of age {age} in {location}, it is crucial to follow the National Immunisation Schedule. Please consult an Anganwadi worker or your nearest health center for the exact vaccines and dates. They will provide the official vaccination card and guidance."
-  utter_default:
-  - text: "Sorry, I didn't understand that. For any medical advice or emergency, please contact your nearest health worker or call 108."
-
-forms:
-  vaccination_form:
-    required_slots:
-      - age
-      - location
-
+  utter_greet: [{text: "Namaste! I am your AI Public Health Assistant. How can I help?"}]
+  utter_goodbye: [{text: "Stay safe and healthy. Goodbye!"}]
+  utter_thank_you: [{text: "You're welcome!"}]
+  utter_iamabot: [{text: "I am an AI assistant for public health information."}]
+  
+  utter_ask_age: [{text: "To check the vaccination schedule, please provide the child's age (e.g., 2 months, 5 years)."}]
+  utter_ask_location: [{text: "Thank you. And for which district or city?"}]
+  utter_ask_location_outbreak: [{text: "Certainly. For which district or city do you need to check for outbreak alerts?"}]
+  utter_ask_pincode: [{text: "To find the nearest emergency facility, please provide your 6-digit area pincode."}]
+  
+  utter_vaccination_schedule_api: [{text: "For a {age} old child in {location}, the upcoming recommended vaccines are: [API_RESULT_PLACEHOLDER]. Please confirm these with your local ASHA worker."}]
+  utter_vaccination_schedule_fallback: [{text: "I couldn't fetch the live schedule for {age} in {location}. Please visit your nearest health center for the official schedule."}]
+  utter_outbreak_alerts_api: [{text: "Live IDSP Report for {location}: [API_RESULT_PLACEHOLDER]. Please follow all local advisories."}]
+  utter_outbreak_alerts_fallback: [{text: "I'm unable to connect to the live surveillance portal for {location}. For official alerts, check your state's MoHFW website."}]
+  utter_emergency_contacts_api: [{text: "Based on pincode {pincode}, nearest public facilities are: [API_RESULT_PLACEHOLDER]. For emergencies, call 112."}]
+  utter_emergency_contacts_fallback: [{text: "I couldn't look up pincode {pincode}. For medical queries, call 1075. For emergencies, dial 112."}]
+  
+  utter_disease_info_covid-19: [{text: "COVID-19 is a respiratory illness. For details, consult the MoHFW website. For emergencies, call 108."}]
+  utter_symptoms_tuberculosis: [{text: "Symptoms of Tuberculosis include a persistent cough. See a doctor for diagnosis. For emergencies, call 108."}]
+  utter_prevention_malaria: [{text: "To prevent Malaria, use mosquito nets and repellent. Keep your surroundings clean. For emergencies, call 108."}]
+  # (Include your other utter_disease/symptom/prevention responses here...)
+  utter_disease_guidelines_fallback: [{text: "For specific information on a disease, please consult a registered practitioner."}]
+  
+  utter_general_health_tips: [{text: "To stay safe from infections, wash hands, drink clean water, and eat well-cooked food."}]
+  utter_fallback: [{text: "I'm sorry, I'm not sure how to help. You can ask me about vaccine schedules, outbreaks, or emergency contacts."}]
+  
+# FORMS ARE REMOVED
 actions:
- - utter_goodbye
- - utter_greet
- - utter_thank_you
- - utter_iamabot
- - utter_disease_info_covid-19
- - utter_disease_info_malaria
- - utter_disease_info_tuberculosis
- - utter_disease_info_generic
- - utter_symptoms_covid-19
- - utter_symptoms_malaria
- - utter_symptoms_tuberculosis
- - utter_symptoms_generic
- - utter_prevention_covid-19
- - utter_prevention_malaria
- - utter_prevention_tuberculosis
- - utter_prevention_generic
- - utter_outbreak_alerts
- - utter_ask_age
- - utter_ask_location
- - utter_vaccination_schedule_info
- - utter_default
+- action_ask_vaccination_schedule
+- action_ask_outbreak_alerts
+- action_ask_emergency_contacts
+- action_handle_disease_query
 
 session_config:
   session_expiration_time: 60

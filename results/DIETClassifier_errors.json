@@ -1,14 +1,23 @@
 [
   {
-    "text": "মুম্বাইতে কি কোনো প্রাদুর্ভাব আছে?",
+    "text": "age is six months old",
     "entities": [
       {
-        "start": 0,
-        "end": 7,
-        "value": "মুম্বাই",
-        "entity": "location"
+        "start": 7,
+        "end": 21,
+        "value": "six months old",
+        "entity": "age"
       }
     ],
-    "predicted_entities": []
+    "predicted_entities": [
+      {
+        "entity": "age",
+        "start": 11,
+        "end": 21,
+        "confidence_entity": 0.9975437521934509,
+        "value": "months old",
+        "extractor": "DIETClassifier"
+      }
+    ]
   }
 ]

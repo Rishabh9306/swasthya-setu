@@ -1,43 +1,65 @@
 version: "3.1"
-
 rules:
-- rule: Say hi to the user
+
+# --- RULE GROUP 1: TRIGGERING THE PYTHON-DRIVEN CONVERSATIONS ---
+# These rules map the user's initial request to the correct starting action in Python.
+# They are now explicit and do not use the '{intent}' shortcut.
+
+- rule: Activate Vaccination Schedule Action
+  steps:
+  - intent: ask_vaccination_schedule
+  - action: action_ask_vaccination_schedule
+
+- rule: Activate Outbreak Alert Action
+  steps:
+  - intent: ask_outbreak_alerts
+  - action: action_ask_outbreak_alerts
+
+- rule: Activate Emergency Contacts Action
+  steps:
+  - intent: ask_emergency_contacts
+  - action: action_ask_emergency_contacts
+
+# --- RULE GROUP 2: HANDLING SINGLE-TURN QUERIES ---
+
+- rule: Handle all disease-related questions
+  steps:
+  - or:
+    - intent: ask_disease_info
+    - intent: ask_symptoms
+    - intent: ask_prevention
+  - action: action_handle_disease_query
+    
+- rule: Handle General Health Tips
+  steps:
+  - intent: ask_general_health_tips
+  - action: utter_general_health_tips
+
+# --- RULE GROUP 3: BASIC CHITCHAT (NOW EXPLICIT) ---
+# This fixes the 'utter_{intent}' error permanently.
+
+- rule: Handle Greet
   steps:
   - intent: greet
   - action: utter_greet
 
-- rule: Say goodbye to the user
+- rule: Handle Goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Say you're welcome
+- rule: Handle Thank You
   steps:
   - intent: thank_you
   - action: utter_thank_you
 
-- rule: Handle bot challenge
+- rule: Handle Bot Challenge
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: Activate Vaccination Form
-  steps:
-  - intent: ask_vaccination_schedule
-  - action: vaccination_form
-  - active_loop: vaccination_form
-
-- rule: Submit Vaccination Form
-  condition:
-  - active_loop: vaccination_form
-  steps:
-  - action: vaccination_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: utter_vaccination_schedule_info
-
-- rule: Handle fallback
+# --- FINAL RULE: UNIVERSAL FALLBACK ---
+- rule: Handle nlu_fallback
   steps:
   - intent: nlu_fallback
-  - action: utter_default
+  - action: utter_fallback

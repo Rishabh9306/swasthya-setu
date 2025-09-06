@@ -83,13 +83,13 @@ nlu:
   examples: |
     - Tell me about [COVID-19](disease)
     - What is [malaria](disease)?
+    - Give me information on [tuberculosis](disease)
     - What do you know about [Tuberculosis](disease)?
     - [Dengue](disease) ke baare mein detail me batao
+    - Explain [jaundice](disease) to me
+    - I want to know about the [flu](disease)
     - Can you explain what [malaria](disease) is?
-    - Information on [typhoid](disease) please
-    - [Malaria](disease) aur uske lakshan batao
     - Tell me the details for [jaundice](disease)
-    - I need some info about that [mosquito disease](disease:malaria)
     - [TB](disease) ke bare me jankari chahiye
     - [டைফয়েড](disease) பற்றி சொல்லுங்கள்
     - [మలేరియా](disease) అంటే ఏమిటి?
@@ -117,7 +117,7 @@ nlu:
     - [காசநோயின்](disease) அறிகுறிகள்
     - [మలేరియా](disease) యొక్క లక్షణాలను చెప్పండి
     - [कोविड-19](disease) के लक्षण क्या हैं?
-    - [ମ୍ୟାଲେରିଆ](disease)ର ଚିହ୍ନ
+    - [ମ୍ୟାଲେରିଆର](disease) ଚିହ୍ନ
     - [ডেঙ্গুর](disease) লক্ষণ বলুন
     - [कोविड-१९](disease) ची लक्षणे कोणती?
     - [ਕੋਵਿਡ-੧੯](disease) ਦੇ ਲੱਛਣ ਕੀ ਹਨ?
@@ -126,19 +126,32 @@ nlu:
   examples: |
     - How to prevent [COVID-19](disease)?
     - what is the best way to avoid the [flu](disease)?
-    - how can i improve my immunity?
-    - What are some general hygiene tips?
-    - How do I stay healthy?
+    - How do you stop yourself from getting [malaria](disease)?
+    - What can I do to not get [dengue](disease)?
+    - Is there a way to avoid [typhoid](disease)?
+    - How to prevent getting sick from [cholera](disease)
+    - preventive measures for [jaundice](disease)
     - [dengue](disease) se safe kaise rahe?
     - [malaria](disease) se bachne ka tarika
     - [TB](disease) se bachav ke tarike
-    - [ડेंगु](disease) થી કેવી રીતે બચવું?
-    - Tips to prevent [jaundice](disease)
     - [कोविड-19](disease) से कैसे बचें?
-    - [ମ୍ୟାଲେରିଆ](disease)କୁ କିପରି ରୋକାଯାଇପାରିବ?
+    - [ମ୍ୟାଲେରିଆକୁ](disease) କିପରି ରୋକାଯାଇପାରିବ?
     - [ম্যালেরিয়া](disease) কিভাবে প্রতিরোধ করা যায়?
     - [ਮਲੇਰੀଆ](disease) ਤੋਂ ਕਿਵੇਂ ਬਚਿਆ ਜਾਵੇ?
     - [మలేరియాను](disease) ఎలా నివారించాలి?
+
+- intent: ask_general_health_tips
+  examples: |
+    - how can i improve my immunity?
+    - What are some general hygiene tips?
+    - How do I stay healthy?
+    - How to stay safe from infections?
+    - best way to stay safe from germs
+    - general tips for good health
+    - what are some essential hygiene practices
+    - tell me how to keep my family healthy
+    - any advice for a healthy lifestyle?
+    - How can I improve my well-being?
 
 - intent: ask_vaccination_schedule
   examples: |
@@ -160,8 +173,39 @@ nlu:
     - लसीकरण वेळापत्रक काय आहे?
     - தடுப்பூசி அட்டவணை என்ன?
 
-# (The rest of the file: affirm, deny, bot_challenge, provide_age, provide_location, ask_outbreak_alerts, stop, synonyms, lookups are already very robust and can remain as they were in the last "best of the best" version.)
-# I will include them for completeness.
+- intent: ask_outbreak_alerts
+  examples: |
+    - Are there any outbreaks in [Delhi](location)?
+    - any news on outbreaks in [pune city](location)?
+    - is anything spreading in [delhi](location)??
+    - what are the health warnings for my area?
+    - Is it safe to travel to [mumbai](location)?
+    - Any health alerts for [Cuttack](location)?
+    - what is the current situation in [puri](location)?
+    - Is there a disease outbreak in [Kendrapara](location)?
+    - [mumbai](location) me kuch faila hai kya?
+    - [মুম্বাইতে](location) কি কোনো প্রাদুর্ভাব আছে?
+    - [दिल्ली](location) में कोई प्रकोप है?
+    - [কলকাতায়](location) কি কোনো রোগের প্রাদুর্ভাব আছে?
+    - [मुंबईमध्ये](location) काही उद्रेक आहे کا?
+
+- intent: ask_emergency_contacts
+  examples: |
+    - Which hospital can I go to nearby?
+    - nearest hospital in [jaipur](location)
+    - what is the nearest hospital to [110001](pincode)
+    - hospital near [400001](pincode)
+    - I need emergency help
+    - can you give me a helpline number
+    - what hospitals are in the [delhi](location) area?
+    - list of emergency contacts in my district
+    - Where is the nearest PHC?
+    - ambulance number
+    - call 108
+    - ambulance number for pincode [560001](pincode)
+    - find a hospital in [Delhi](location)
+    - emergency services in [400001](pincode)
+
 - intent: affirm
   examples: |
     - yes
@@ -203,6 +247,10 @@ nlu:
     - are you a real person?
     - Am I talking to a bot?
     - Who are you?
+    - what can you do bot?
+    - tell me about yourself bot
+    - what are you bot
+    - explain what you can do
     - Tum bot ho?
     - क्या तुम एक बोट हो?
     - আপনি কি একটি বট?
@@ -232,22 +280,83 @@ nlu:
     - Main [Mumbai](location) se hoon
     - [Chennai](location) mein rehta hoon
     - The district is [Pune](location)
+    - my city is [Pune](location)
+    - the city I live in is [Chennai](location)
+    - it is [Bhubaneswar](location)
+    - the location is [Cuttack](location)
     - i live in [Jaipur](location)
+    - [bhubaneswar](location)
+    - [delhi](location)
+    - how about [hyderabad](location)?
+    - [Amaravati](location)
+    - [Itanagar](location)
+    - [Dispur](location)
+    - [Patna](location)
+    - [Raipur](location)
+    - [Panaji](location)
+    - [Gandhinagar](location)
+    - [Chandigarh](location)
+    - [Shimla](location)
+    - [Ranchi](location)
+    - [Thiruvananthapuram](location)
+    - [Bhopal](location)
+    - [Imphal](location)
+    - [Shillong](location)
+    - [Aizawl](location)
+    - [Kohima](location)
+    - [Jaipur](location)
+    - [Gangtok](location)
+    - [Hyderabad](location)
+    - [Agartala](location)
+    - [Lucknow](location)
+    - [Dehradun](location)
+    - [Port Blair](location)
+    - [Daman](location)
+    - [Kavaratti](location)
+    - [Puducherry](location)
+    - [Leh](location)
+    - [Jammu](location)
+    - [Srinagar](location)
+    - [New Delhi](location)
+    - [Angul](location)
+    - [Balangir](location)
+    - [Balasore](location)
+    - [Bargarh](location)
+    - [Bhadrak](location)
+    - [Boudh](location)
+    - [Cuttack](location)
+    - [Deogarh](location)
+    - [Dhenkanal](location)
+    - [Gajapati](location)
+    - [Ganjam](location)
+    - [Jagatsinghpur](location)
+    - [Jajpur](location)
+    - [Jharsuguda](location)
+    - [Kalahandi](location)
+    - [Kandhamal](location)
+    - [Kendrapara](location)
+    - [Keonjhar](location)
+    - [Khordha](location)
+    - [Koraput](location)
+    - [Malkangiri](location)
+    - [Mayurbhanj](location)
+    - [Nabarangpur](location)
+    - [Nayagarh](location)
+    - [Nuapada](location)
+    - [Puri](location)
+    - [Rayagada](location)
+    - [Sambalpur](location)
+    - [Subarnapur](location)
+    - [Sundargarh](location)
 
-- intent: ask_outbreak_alerts
+- intent: provide_pincode
   examples: |
-    - Are there any outbreaks in [Delhi](location)?
-    - any news on outbreaks in [pune city](location)?
-    - is anything spreading in [delhi](location)??
-    - what are the health warnings for my area?
-    - Is it safe to travel to [mumbai](location)?
-    - [মুম্বাই](location)তে কি কোনো প্রাদুর্ভাব আছে?
-    - [mumbai](location) me kuch faila hai kya?
-    - Any health emergencies in [Kolkata](location)?
-    - Is there a [dengue](disease) outbreak in [pune](location)?
-    - [दिल्ली](location) में कोई प्रकोप है?
-    - [কলকাতা](location)য় কি কোনো রোগের প্রাদুর্ভাব আছে?
-    - [मुंबई](location)मध्ये काही उद्रेক आहे کا?
+    - my pincode is [110001](pincode)
+    - [400001](pincode)
+    - it's [400001](pincode)
+    - [560001](pincode)
+    - how about for pincode [751001](pincode)
+    - pin is [201301](pincode)
 
 - intent: stop
   examples: |
@@ -259,11 +368,20 @@ nlu:
     - ruk jao
     - बंद करो
     - ରୁହନ୍ତୁ
-    - থামো
+    - থামੋ
     - थांबा
     - ਰੁਕੋ
     - நிறுத்து
     - ఆపు
+
+- intent: provide_disease
+  examples: |
+    - I was asking about [Malaria](disease)
+    - The disease is [COVID-19](disease)
+    - it is [tuberculosis](disease)
+    - [Dengue](disease)
+    - It's [jaundice](disease)
+    - I have a question about the [flu](disease)
 
 - synonym: fever
   examples: |
@@ -287,7 +405,7 @@ nlu:
   examples: |
     - TB
     - तपेदिक
-    - यक्ष्मा
+    - यक्ष୍మా
     - ଯକ୍ଷ୍ମା
     - যক্ষ্মা
     - क्षयरोग

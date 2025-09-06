@@ -1,0 +1,10 @@
+[
+  {
+    "text": "best way to stay safe from germs",
+    "intent": "ask_prevention",
+    "intent_prediction": {
+      "name": "ask_general_health_tips",
+      "confidence": 0.9922188520431519
+    }
+  }
+]

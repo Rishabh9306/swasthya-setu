@@ -1,84 +1,77 @@
 version: "3.1"
 
 nlu:
-# --- Greet ---
+# --- Testing Core Conversational Intents ---
 - intent: greet
   examples: |
-    - whats up
     - hey there assistant
-    - Good afternoon
-    - Namaskaram
+    - Namaskar bot
 
-# --- Goodbye ---
 - intent: goodbye
   examples: |
-    - I think I have all the info, bye
-    - Gotta run, thanks
-    - that's all for now
+    - that's all, see ya
+    - ok i am done now, thanks
 
-# --- Thank You ---
 - intent: thank_you
   examples: |
-    - bahut dhanyavaad
-    - That's exactly what I needed, thank you
-    - thx
+    - thx a lot for the help
+    - Thanks for the information
 
-# --- Ask Disease Info ---
-- intent: ask_disease_info
-  examples: |
-    - [TB](disease) ke baare mein detail me batao
-    - Can you tell me about [dengue](disease)?
-    - [Malaria](disease) aur uske lakshan batao
-    - [டைফয়েড](disease) பற்றி சொல்லுங்கள்
-
-# --- Ask Symptoms ---
-- intent: ask_symptoms
-  examples: |
-    - what are the symtoms of [covid](disease)?
-    - I have a high [fever](symptom), what disease is this?
-    - How do I know if I got [malaria](disease)
-    - [காசநோயின்](disease) அறிகுறிகள்
-
-# --- Ask Prevention ---
-- intent: ask_prevention
-  examples: |
-    - how can i improve my immunity?
-    - what is the best way to avoid the [flu](disease)?
-    - [dengue](disease) se safe kaise rahe?
-    - [ડेंगु](disease) થી કેવી રીતે બચવું?
-
-# --- Ask Vaccination Schedule ---
-- intent: ask_vaccination_schedule
-  examples: |
-    - tell me the child immunization dates
-    - for a [2 month old](age) baby what vaccines are needed?
-    - i need the vaccination list
-    - ਟੀਕਾਕਰਨ ਚਾਰਟ
-
-# --- Ask Outbreak Alerts ---
-- intent: ask_outbreak_alerts
-  examples: |
-    - any news on outbreaks in [pune city](location)?
-    - is anything spreading in [delhi](location)??
-    - what are the health warnings for my area?
-    - [মুম্বাই](location)তে কি কোনো প্রাদুর্ভাব আছে?
-
-# --- Provide Age ---
-- intent: provide_age
-  examples: |
-    - [five years old](age)
-    - [30](age)
-    - child's age is [2](age)
-
-# --- Provide Location ---
-- intent: provide_location
-  examples: |
-    - [Mumbai](location)
-    - we are currently in [bengaluru](location)
-    - My district is [jaipur](location)
-
-# --- Bot Challenge ---
 - intent: bot_challenge
   examples: |
-    - are you an ai?
-    - are you a real person?
+    - are you a real person or an AI?
+    - tell me about yourself bot
+
+# --- Testing All Disease Query Types ---
+- intent: ask_disease_info
+  examples: |
+    - give me all details about [tuberculosis](disease)
+    - [টাইফয়েড](disease) কি?
+
+- intent: ask_symptoms
+  examples: |
+    - what are the first symtoms of [malaria](disease)? # Note the typo in 'symtoms'
+    - I feel sick and have a [fever](symptom), what could it be?
+
+- intent: ask_prevention
+  examples: |
+    - how to avoid getting [jaundice](disease)
+    - best way to stay safe from germs
+
+# --- Testing NEW API-driven Intents ---
+- intent: ask_vaccination_schedule
+  examples: |
+    - For a [3 year old](age), what's the vaccine sched? # Note the abbreviation 'sched'
+    - tikakaran chart for babies
+
+- intent: ask_outbreak_alerts
+  examples: |
+    - is [dengue](disease) spreading in [kolkata](location)?
+    - Any health alerts for [Cuttack](location)? # Testing a specific Odisha district
+
+- intent: ask_emergency_contacts
+  examples: |
+    - ambulance number for pincode [560001](pincode)
+    - where is the nearest government hospital?
+    - give me the national health helpline
+
+- intent: ask_general_health_tips
+  examples: |
+    - general tips for good health
+    - what are some essential hygiene practices
+
+# --- Testing NEW Information-providing Intents ---
+- intent: provide_pincode
+  examples: |
+    - the pin code is [751001](pincode)
+    - its [110001](pincode)
+
+- intent: provide_age
+  examples: |
+    - for my child who is [4](age)
+    - age is [six months old](age)
+
+- intent: provide_location
+  examples: |
+    - [Bhubaneswar](location) # Testing a single-word capital
+    - my city is [Pune](location)

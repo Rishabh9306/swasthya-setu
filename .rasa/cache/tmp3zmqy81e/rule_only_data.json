@@ -1,0 +1,6 @@
+{
+  "rule_only_slots": [
+    "api_call_success"
+  ],
+  "rule_only_loops": []
+}

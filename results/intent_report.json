@@ -1,68 +1,26 @@
 {
-  "ask_prevention": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 4,
-    "confused_with": {}
-  },
-  "provide_location": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3,
-    "confused_with": {}
-  },
-  "ask_outbreak_alerts": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 4,
-    "confused_with": {}
-  },
-  "ask_disease_info": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 4,
-    "confused_with": {}
-  },
   "ask_symptoms": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 4,
+    "support": 2,
     "confused_with": {}
   },
   "goodbye": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 3,
+    "support": 2,
     "confused_with": {}
   },
-  "thank_you": {
+  "ask_outbreak_alerts": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 3,
+    "support": 2,
     "confused_with": {}
   },
-  "provide_age": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 3,
-    "confused_with": {}
-  },
-  "greet": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 4,
-    "confused_with": {}
-  },
-  "bot_challenge": {
+  "provide_location": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
@@ -73,26 +31,91 @@
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 4,
+    "support": 2,
     "confused_with": {}
   },
-  "accuracy": 1.0,
-  "macro avg": {
+  "greet": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 38
+    "support": 2,
+    "confused_with": {}
+  },
+  "thank_you": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "ask_disease_info": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "ask_prevention": {
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1-score": 0.6666666666666666,
+    "support": 2,
+    "confused_with": {
+      "ask_general_health_tips": 1
+    }
+  },
+  "provide_age": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "provide_pincode": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "bot_challenge": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "ask_general_health_tips": {
+    "precision": 0.6666666666666666,
+    "recall": 1.0,
+    "f1-score": 0.8,
+    "support": 2,
+    "confused_with": {}
+  },
+  "ask_emergency_contacts": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3,
+    "confused_with": {}
+  },
+  "accuracy": 0.9655172413793104,
+  "macro avg": {
+    "precision": 0.9761904761904762,
+    "recall": 0.9642857142857143,
+    "f1-score": 0.9619047619047619,
+    "support": 29
   },
   "weighted avg": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 38
+    "precision": 0.9770114942528735,
+    "recall": 0.9655172413793104,
+    "f1-score": 0.9632183908045977,
+    "support": 29
   },
   "micro avg": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 38
+    "precision": 0.9655172413793104,
+    "recall": 0.9655172413793104,
+    "f1-score": 0.9655172413793104,
+    "support": 29
   }
 }
