@@ -172,6 +172,16 @@ nlu:
     - টিকা দেওয়ার সময়সূচী কি?
     - लसीकरण वेळापत्रक काय आहे?
     - தடுப்பூசி அட்டவணை என்ன?
+    # Examples with location only
+    - what is the vaccine schedule in [bhubaneswar](location)
+    - immunization schedule for [cuttack](location)
+    - vaccine list for [mumbai](location)
+    - for a [6 month old](age) baby in [delhi](location) what vaccines are needed
+    - i need the vaccination list for a [1 year old](age) in [pune](location)
+    - what is the schedule for a [5 year old](age) in [Bhubaneswar](location)?
+    - [2 years old](age) vaccine schedule [mumbai](location)
+    - [Cuttack](location) me [5 saal](age) ke bacche ka tikakaran
+    - [भुवनेश्वर](location) में [5 साल](age) के बच्चे का टीकाकरण
 
 - intent: ask_outbreak_alerts
   examples: |

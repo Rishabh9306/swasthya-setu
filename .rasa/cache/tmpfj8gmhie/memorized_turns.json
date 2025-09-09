@@ -1,0 +1,17 @@
+{
+  "lookup": {
+    "eJyLrq6NBQAEOAGx": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3BChdnB2fmptalJ6al1wZn5yfVwLUUFxbGwsA+hYiiQ==": "emergency_form",
+    "eJyNjVEKgCAQRK/iATqBV4lYRLaQclfUhBDv3kpBH0H0t8O+NzPWNqgaIhYwNjsmrep1ABmPWt1hcykjCbsnjMI4kpjlnVZAj3FBsgdYpixCar20mwVhYw4iXG0POnP0Qn0sv9if09MJ0WVRxw==": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3BChdnB2fX1qSVJSamB2fmJNaVFJcWxsLAJT+IVM=": "outbreak_form",
+    "eJyNzcEJgDAMBdBVOoATuIpIqBKhtDYlTXsp3d2I4sGDeMsnL/lT64NpibGCXcVRHE27Boh2x9HcIbgsGNWWjKzGRY2i6+yBiiyM1oMNyJL7+fE8qwiBKKm+Xj1uI94VfbS+6Z/W+QBL106X": "action_listen",
+    "eJy9j0EKgDAMBL/SB/gCvyISqkQo1qYk0Uvp340oHjzozdsuO9klXamNK5lxAz9qoNS6cgpIfsHWXSYGUUzGroJsTEhm1WKZgVYdGP0MPiKr1KPxONsQIlE2+qy6uYl4Mehl9Yn+s/rxqyjlWvsdy9h1uA==": "action_deactivate_loop",
+    "eJy9kEEOwkAIRa8yB/AEvYoxhComk06HCdBuJnN3qdO4MKm6cgfh8f+Hc22nUIvQCni1yHkItReQcaYh7E2KapSdXZTEmZi9NR/rBLzYKIQTYCIxbZvitrYSJObidJd6cXeW2aEPru/of1y/3KrGpf32rhs9o6D1MEdalwcXHJLf": "utter_goodbye",
+    "eJy9kE0KAjEMha/SA3iCuYpIyDhRynSakqYDUnp3M1ZcCP7gwl1Cvrz3kn1tO1eT0Ap4VM9xcLUXEHGhwd2b4LNSNLZkEmN8tFZtnGfgoqMQzoCBRHPbFLe1lSAwJ6O71IM7sSwGvXF9Rv/j+uHWrJzad++a6BYFtYf5TauoksCZeRov9EricAXmKKxy": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3BChdnB1flpicnJmXCFZXnJyRmlKak1pbGwsAP5QjRw==": "vaccination_form",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3BChdnB1flpicnJmXCFZXnJyRmlKak1oLMhaktyw1Pic/vwCoBWIesuK0/KJcoDo8tmNRTbQDYgFtolTj": "action_listen",
+    "eJy9j0EOwyAMBL/CA/ICvhJFCBFXtQoGYQepQvy9TpNDDm2PvXnl2V177mMyvVRozgfBTNb0Y3DkE1hziogsQMpuDFUZJJWia3645kNA8m+Owx3WLcLYY3dvAxdzLmo58q7wLdek3I/2D/R/D/jyvlajILA184oMnmGZzPUkfqYiOfEYywu3X4g7": "action_knowledge_search",
+    "eJy9j0EOwyAMBL/CA/KCfCWKEAK3sQIGYUJVofy9TtJDDm0PVdWbV571roe2dqqlDFUbWzBSr9oxaDIBevUUHrkACbswZGGQRBZZ86yrsRbJ7BzbCdziYd3Obt4K2seYxHLcO8OXmINwH9Jf0P8t8OZ9icaCwL0aHDIYhrFT50p8D6nEwL+tMVO8eXBX0JKZ7fRVofEBjXu/mQ==": "vaccination_form",
+    "eJzFkV8KwyAMh6/iAXoCr1KKiGZrqP8w1jGkd1/a7qEP62AwtreEfMnvE/u2dKKlDFVpUzAGKdpeqKA9SPFsHFKBwOxMkJnBwG3hMU2qamMw6I0jM4KdHSzr2XW3gnIxJl7Z7x3hS8yeuTfpL+jfCpw8n6OxIJAUvUUCTTB04qhEd59K9PRdjSnEmwN7BcWZ2Yz/Ezr/mA9Mhgf/x/Qn": "action_listen"
+  }
+}

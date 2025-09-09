@@ -1,18 +1,9 @@
-# The config recipe.
-# https://rasa.com/docs/rasa/model-configuration/
-recipe: default.v1
+# config.yml
 
-# The assistant project unique identifier
-# This default value must be changed.
-# See https://rasa.com/docs/rasa/reference/rasa-sdk-changelog/
-assistant_id: "20250905-164010-stable-platform"
-
-# Configuration for Rasa NLU.
-# https://rasa.com/docs/rasa/nlu/components/
+# The language your NLU model should be trained in.
 language: en
 
-# This is a robust pipeline that avoids the HFTransformersNLP dependency issues
-# on some platforms, while still providing high accuracy with the DIETClassifier.
+# Pipeline for NLU. This combination is robust and effective.
 pipeline:
 - name: WhitespaceTokenizer
 - name: RegexFeaturizer
@@ -24,20 +15,22 @@ pipeline:
   max_ngram: 4
 - name: DIETClassifier
   epochs: 100
-  constrain_similarities: true
 - name: EntitySynonymMapper
-- name: ResponseSelector
-  epochs: 100
+# This is the GATEKEEPER for your entire system.
+# If DIETClassifier's top prediction is below 95% confident, this component
+# will override it and trigger the 'nlu_fallback' intent.
 - name: FallbackClassifier
-  threshold: 0.4
+  threshold: 0.95
   ambiguity_threshold: 0.1
 
-# Configuration for Rasa Core.
-# https://rasa.com/docs/rasa/core/policies/
+# Policies that decide what the bot does next.
 policies:
 - name: MemoizationPolicy
-- name: RulePolicy
-- name: TEDPolicy
+- name: RulePolicy      # Crucial for executing our simple, high-confidence rules.
+- name: UnexpecTEDIntentPolicy
   max_history: 5
   epochs: 100
-  constrain_similarities: true
+- name: TEDPolicy       # Handles the context of multi-turn conversations.
+  max_history: 5
+  epochs: 100
+assistant_id: 20250908-141345-complex-amplifier

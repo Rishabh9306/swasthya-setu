@@ -1,43 +1,20 @@
+# data/rules.yml
+
 version: "3.1"
+
 rules:
 
-# --- RULE GROUP 1: TRIGGERING THE PYTHON-DRIVEN CONVERSATIONS ---
-# These rules map the user's initial request to the correct starting action in Python.
-# They are now explicit and do not use the '{intent}' shortcut.
-
-- rule: Activate Vaccination Schedule Action
+# This is the single most important rule. It is the entry point to our
+# smart triage system and ONLY runs when NLU confidence is below 95%.
+- rule: Activate Fallback Orchestrator when NLU is uncertain
   steps:
-  - intent: ask_vaccination_schedule
-  - action: action_ask_vaccination_schedule
+  - intent: nlu_fallback
+  - action: action_default_fallback_orchestrator
 
-- rule: Activate Outbreak Alert Action
-  steps:
-  - intent: ask_outbreak_alerts
-  - action: action_ask_outbreak_alerts
+# --- RULES FOR THE "EXPRESS LANE" ---
+# These rules will ONLY be used if NLU confidence is >= 95%.
 
-- rule: Activate Emergency Contacts Action
-  steps:
-  - intent: ask_emergency_contacts
-  - action: action_ask_emergency_contacts
-
-# --- RULE GROUP 2: HANDLING SINGLE-TURN QUERIES ---
-
-- rule: Handle all disease-related questions
-  steps:
-  - or:
-    - intent: ask_disease_info
-    - intent: ask_symptoms
-    - intent: ask_prevention
-  - action: action_handle_disease_query
-    
-- rule: Handle General Health Tips
-  steps:
-  - intent: ask_general_health_tips
-  - action: utter_general_health_tips
-
-# --- RULE GROUP 3: BASIC CHITCHAT (NOW EXPLICIT) ---
-# This fixes the 'utter_{intent}' error permanently.
-
+# Handle simple chitchat instantly.
 - rule: Handle Greet
   steps:
   - intent: greet
@@ -58,8 +35,43 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-# --- FINAL RULE: UNIVERSAL FALLBACK ---
-- rule: Handle nlu_fallback
+# Start the multi-turn API conversations.
+- rule: Activate Vaccination Form
   steps:
-  - intent: nlu_fallback
-  - action: utter_fallback
+  - intent: ask_vaccination_schedule
+  - action: vaccination_form
+  - active_loop: vaccination_form
+
+- rule: Submit Vaccination Form
+  condition:
+  - active_loop: vaccination_form
+  steps:
+  - action: vaccination_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_ask_vaccination_schedule
+
+- rule: Activate Outbreak Alert Action
+  steps:
+  - intent: ask_outbreak_alerts
+  - action: action_ask_outbreak_alerts
+
+- rule: Activate Emergency Contacts Action
+  steps:
+  - intent: ask_emergency_contacts
+  - action: action_ask_emergency_contacts
+
+# Handle single-turn information requests.
+- rule: Handle all disease-related questions
+  steps:
+  - or:
+    - intent: ask_disease_info
+    - intent: ask_symptoms
+    - intent: ask_prevention
+  - action: action_handle_disease_query
+    
+- rule: Handle General Health Tips
+  steps:
+  - intent: ask_general_health_tips
+  - action: utter_general_health_tips

@@ -1,44 +1,19 @@
-version: "3.1"
-stories:
-- story: Full vaccination path over multiple turns
-  steps:
-  - intent: ask_vaccination_schedule
-  - action: action_ask_vaccination_schedule
-  - intent: provide_age
-    entities:
-    - age: "6 months"
-  - action: action_ask_vaccination_schedule
-  - intent: provide_location
-    entities:
-    - location: "Bhubaneswar"
-  - action: action_ask_vaccination_schedule
+# data/stories.yml
 
-- story: Outbreak alerts over multiple turns
+version: "3.1"
+
+stories:
+
+- story: Provide location to complete the outbreak alerts flow
   steps:
-  - intent: ask_outbreak_alerts
-  - action: action_ask_outbreak_alerts
   - intent: provide_location
     entities:
     - location: "Cuttack"
   - action: action_ask_outbreak_alerts
 
-- story: Emergency contacts over multiple turns
+- story: Provide pincode to complete the emergency contacts flow
   steps:
-  - intent: ask_emergency_contacts
-  - action: action_ask_emergency_contacts
   - intent: provide_pincode
     entities:
     - pincode: "751001"
   - action: action_ask_emergency_contacts
-
-- story: User interrupts and then provides info
-  steps:
-  - intent: ask_vaccination_schedule
-  - action: action_ask_vaccination_schedule
-  - intent: thank_you # user says thanks
-  - action: utter_thank_you
-  - action: action_listen # bot waits for the age again
-  - intent: provide_age
-    entities:
-    - age: "2 years"
-  - action: action_ask_vaccination_schedule # bot now has age and asks for location

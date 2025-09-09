@@ -1,0 +1,78 @@
+import requests
+
+BASE_URL = "https://rxnav.nlm.nih.gov/REST"
+
+def get_rxcui(drug_name):
+    """Get the RxCUI ID for a given drug name"""
+    url = f"{BASE_URL}/rxcui.json?name={drug_name}"
+    r = requests.get(url)
+    data = r.json()
+    if "idGroup" in data and "rxnormId" in data["idGroup"]:
+        return data["idGroup"]["rxnormId"][0]
+    return None
+
+def get_all_info(rxcui):
+    """Fetch all related info for a drug"""
+    url = f"{BASE_URL}/rxcui/{rxcui}/allrelated.json"
+    r = requests.get(url)
+    return r.json()
+
+def summarize_info(drug_name):
+    """Summarize RxNorm info in human-readable form"""
+    rxcui = get_rxcui(drug_name)
+    if not rxcui:
+        print(f"❌ No RxCUI found for {drug_name}")
+        return
+
+    print(f"\n=== Information for {drug_name.title()} ===")
+    data = get_all_info(rxcui)
+
+    if "allRelatedGroup" not in data:
+        print("No related data available.")
+        return
+
+    concepts = data["allRelatedGroup"].get("conceptGroup", [])
+
+    # Helper function
+    def extract_by_type(concepts, tty):
+        for group in concepts:
+            if group.get("tty") == tty and "conceptProperties" in group:
+                return [c["name"] for c in group["conceptProperties"]]
+        return []
+
+    # Generic name
+    generic = extract_by_type(concepts, "IN")
+    if generic:
+        print(f"\n🔹 Generic Name:\n   {', '.join(generic)}")
+
+    # Common Brand Names
+    brands = extract_by_type(concepts, "BN")
+    if brands:
+        print("\n🔹 Common Brand Names:")
+        for b in brands[:15]:  # show first 15 only
+            print(f"   • {b}")
+
+    # Available Forms (DF = Dose Form)
+    forms = extract_by_type(concepts, "DF")
+    if forms:
+        print("\n🔹 Available Forms:")
+        for f in forms[:10]:
+            print(f"   • {f}")
+
+    # Combination Medicines (MIN = Multi-Ingredient)
+    combos = extract_by_type(concepts, "MIN")
+    if combos:
+        print("\n🔹 Combination Medicines (with other drugs):")
+        for c in combos[:10]:
+            print(f"   • {c}")
+
+    # Sample Packaged Drugs (SBD = Semantic Branded Drug)
+    samples = extract_by_type(concepts, "SBD")
+    if samples:
+        print("\n🔹 Example Packaged Drugs:")
+        for s in samples[:10]:
+            print(f"   • {s}")
+
+if __name__ == "__main__":
+    # Test with paracetamol
+    summarize_info("Paracetamol")

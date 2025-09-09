@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-age",
+      "2": "I-age",
+      "3": "L-age",
+      "4": "U-age",
+      "5": "B-disease",
+      "6": "I-disease",
+      "7": "L-disease",
+      "8": "U-disease",
+      "9": "B-location",
+      "10": "I-location",
+      "11": "L-location",
+      "12": "U-location",
+      "13": "B-pincode",
+      "14": "I-pincode",
+      "15": "L-pincode",
+      "16": "U-pincode",
+      "17": "B-symptom",
+      "18": "I-symptom",
+      "19": "L-symptom",
+      "20": "U-symptom",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-age": 1,
+      "I-age": 2,
+      "L-age": 3,
+      "U-age": 4,
+      "B-disease": 5,
+      "I-disease": 6,
+      "L-disease": 7,
+      "U-disease": 8,
+      "B-location": 9,
+      "I-location": 10,
+      "L-location": 11,
+      "U-location": 12,
+      "B-pincode": 13,
+      "I-pincode": 14,
+      "L-pincode": 15,
+      "U-pincode": 16,
+      "B-symptom": 17,
+      "I-symptom": 18,
+      "L-symptom": 19,
+      "U-symptom": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]
