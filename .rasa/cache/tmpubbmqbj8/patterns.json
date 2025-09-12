@@ -1,0 +1,18 @@
+[
+  {
+    "name": "disease",
+    "pattern": "(\\bCOVID\\-19\\b|\\bMalaria\\b|\\bTuberculosis\\b|\\bDengue\\b|\\bJaundice\\b|\\bTyphoid\\b|\\bCholera\\b|\\bFlu\\b|\\bChikungunya\\b|\\bMeasles\\b)"
+  },
+  {
+    "name": "vaccine",
+    "pattern": "(\\bBCG\\b|\\bPolio\\b|\\bDPT\\b|\\bHepatitis\\ B\\b|\\bMeasles\\b|\\bMMR\\b|\\bTetanus\\b|\\bCovid\\-19\\ Vaccine\\b|\\bCovishield\\b|\\bCovaxin\\b)"
+  },
+  {
+    "name": "symptom",
+    "pattern": "(\\bfever\\b|\\bcough\\b|\\bcold\\b|\\bheadache\\b|\\bfatigue\\b|\\bbody\\ ache\\b|\\bsore\\ throat\\b|\\bbreathing\\ difficulty\\b|\\brash\\b|\\bvomiting\\b)"
+  },
+  {
+    "name": "location",
+    "pattern": "(\\bVisakhapatanam\\b|\\bCachar\\b|\\bHailakandi\\b|\\bTinsukia\\b|\\bPatna\\b|\\bSamastipur\\b|\\bBaloda\\ Bazar\\b|\\bJanjgir\\-Champa\\b|\\bSurguja\\b|\\bNavsari\\b|\\bPalwal\\b|\\bSolan\\b|\\bKupwara\\b|\\bRajouri\\b|\\bKhunti\\b|\\bKodarma\\b|\\bChamarajanagar\\b|\\bMysuru\\b|\\bMalappuram\\b|\\bPalakkad\\b|\\bThrissur\\b|\\bRaisen\\b|\\bChandrapur\\b|\\bPune\\b|\\bYavatmal\\b|\\bChurachandpur\\b|\\bWest\\ Khasi\\ Hills\\b|\\bAizawl\\b|\\bDimapur\\b|\\bKoraput\\b|\\bRayagada\\b|\\bSundargarh\\b|\\bAmritsar\\b|\\bBhilwara\\b|\\bTonk\\b|\\bCuddalore\\b|\\bDindigul\\b|\\bNagapattinam\\b|\\bViluppuram\\b|\\bKarimnagar\\b|\\bMau\\b|\\bSitapur\\b|\\bChamoli\\b|\\bNorth\\ 24\\ Parganas\\b|\\bMurshidabad\\b|\\bPurba\\ Bardhaman\\b|\\bWest\\ Bardhaman\\b|\\bOdisha\\b)"
+  }
+]

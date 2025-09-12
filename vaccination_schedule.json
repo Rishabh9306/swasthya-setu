@@ -1,0 +1,269 @@
+[
+  {
+    "age_months": 0,
+    "vaccines": [
+      {
+        "name": "BCG",
+        "description": "Protects against tuberculosis. Given at birth or as early as possible till one year.",
+        "dose": "0.1 ml (0.05 ml until 1 month age)",
+        "route": "Intra-dermal",
+        "site": "Left upper arm"
+      },
+      {
+        "name": "Hepatitis B - Birth Dose",
+        "description": "Prevents Hepatitis B. Given at birth within 24 hours.",
+        "dose": "0.5 ml",
+        "route": "Intra-muscular",
+        "site": "Antero-lateral side of mid-thigh"
+      },
+      {
+        "name": "OPV-0",
+        "description": "Protects against polio. Given at birth or as early as possible within first 15 days.",
+        "dose": "2 drops",
+        "route": "Oral",
+        "site": "Oral"
+      }
+    ]
+  },
+  {
+    "age_months": 6,
+    "vaccines": [
+      {
+        "name": "OPV-1",
+        "description": "First dose of Oral Polio Vaccine.",
+        "dose": "2 drops",
+        "route": "Oral",
+        "site": "Oral"
+      },
+      {
+        "name": "Pentavalent-1",
+        "description": "Protects against DPT, HepB, Hib.",
+        "dose": "0.5 ml",
+        "route": "Intra-muscular",
+        "site": "Antero-lateral side of mid-thigh"
+      },
+      {
+        "name": "Rotavirus-1",
+        "description": "Protects against diarrheal diseases caused by rotavirus.",
+        "dose": "5 drops (liquid) / 2.5 ml (lyophilized)",
+        "route": "Oral",
+        "site": "Oral"
+      },
+      {
+        "name": "Fractional IPV-1",
+        "description": "First fractional dose of Inactivated Polio Vaccine.",
+        "dose": "0.1 ml",
+        "route": "Intra-dermal",
+        "site": "Right upper arm"
+      },
+      {
+        "name": "PCV-1",
+        "description": "Pneumococcal conjugate vaccine to prevent pneumonia and meningitis.",
+        "dose": "0.5 ml",
+        "route": "Intra-muscular",
+        "site": "Antero-lateral side of mid-thigh"
+      }
+    ]
+  },
+  {
+    "age_months": 10,
+    "vaccines": [
+      {
+        "name": "OPV-2",
+        "description": "Second dose of Oral Polio Vaccine.",
+        "dose": "2 drops",
+        "route": "Oral",
+        "site": "Oral"
+      },
+      {
+        "name": "Pentavalent-2",
+        "description": "Second dose of Pentavalent vaccine (DPT, HepB, Hib).",
+        "dose": "0.5 ml",
+        "route": "Intra-muscular",
+        "site": "Antero-lateral side of mid-thigh"
+      },
+      {
+        "name": "Rotavirus-2",
+        "description": "Second dose of Rotavirus vaccine.",
+        "dose": "5 drops / 2.5 ml",
+        "route": "Oral",
+        "site": "Oral"
+      }
+    ]
+  },
+  {
+    "age_months": 14,
+    "vaccines": [
+      {
+        "name": "OPV-3",
+        "description": "Third dose of Oral Polio Vaccine.",
+        "dose": "2 drops",
+        "route": "Oral",
+        "site": "Oral"
+      },
+      {
+        "name": "Pentavalent-3",
+        "description": "Third dose of Pentavalent vaccine.",
+        "dose": "0.5 ml",
+        "route": "Intra-muscular",
+        "site": "Antero-lateral side of mid-thigh"
+      },
+      {
+        "name": "fIPV-2",
+        "description": "Second fractional dose of IPV.",
+        "dose": "0.1 ml",
+        "route": "Intra-dermal",
+        "site": "Right upper arm"
+      },
+      {
+        "name": "Rotavirus-3",
+        "description": "Third dose of Rotavirus vaccine.",
+        "dose": "5 drops / 2.5 ml",
+        "route": "Oral",
+        "site": "Oral"
+      },
+      {
+        "name": "PCV-2",
+        "description": "Second dose of Pneumococcal vaccine.",
+        "dose": "0.5 ml",
+        "route": "Intra-muscular",
+        "site": "Antero-lateral side of mid-thigh"
+      }
+    ]
+  },
+  {
+    "age_months": 9,
+    "vaccines": [
+      {
+        "name": "MR-1",
+        "description": "Measles-Rubella first dose.",
+        "dose": "0.5 ml",
+        "route": "Subcutaneous",
+        "site": "Right upper arm"
+      },
+      {
+        "name": "JE-1",
+        "description": "Japanese Encephalitis first dose (in endemic districts).",
+        "dose": "0.5 ml",
+        "route": "Subcutaneous",
+        "site": "Left upper arm"
+      },
+      {
+        "name": "Vitamin A 1st dose",
+        "description": "Vitamin A 1 lakh IU oral dose.",
+        "dose": "1 ml",
+        "route": "Oral",
+        "site": "Oral"
+      }
+    ]
+  },
+  {
+    "age_months": 16,
+    "vaccines": [
+      {
+        "name": "MR-2",
+        "description": "Measles-Rubella second dose.",
+        "dose": "0.5 ml",
+        "route": "Subcutaneous",
+        "site": "Right upper arm"
+      },
+      {
+        "name": "JE-2",
+        "description": "Japanese Encephalitis second dose (in endemic districts).",
+        "dose": "0.5 ml",
+        "route": "Subcutaneous",
+        "site": "Left upper arm"
+      },
+      {
+        "name": "DPT-Booster-1",
+        "description": "First booster dose of DPT.",
+        "dose": "0.5 ml",
+        "route": "Intra-muscular",
+        "site": "Antero-lateral side of mid-thigh"
+      },
+      {
+        "name": "OPV-Booster",
+        "description": "Booster dose of Oral Polio Vaccine.",
+        "dose": "2 drops",
+        "route": "Oral",
+        "site": "Oral"
+      },
+      {
+        "name": "Vitamin A 2nd dose",
+        "description": "Vitamin A 2 lakh IU oral dose.",
+        "dose": "2 ml",
+        "route": "Oral",
+        "site": "Oral"
+      }
+    ]
+  },
+  {
+    "age_months": 60,
+    "vaccines": [
+      {
+        "name": "DPT-Booster-2",
+        "description": "Second booster dose of DPT.",
+        "dose": "0.5 ml",
+        "route": "Intra-muscular",
+        "site": "Left upper arm"
+      },
+      {
+        "name": "OPV-Booster-2",
+        "description": "Second booster dose of Oral Polio Vaccine.",
+        "dose": "2 drops",
+        "route": "Oral",
+        "site": "Oral"
+      }
+    ]
+  },
+  {
+    "age_months": 120,
+    "vaccines": [
+      {
+        "name": "Td (10 years)",
+        "description": "Tetanus and Diphtheria toxoid at 10 years.",
+        "dose": "0.5 ml",
+        "route": "Intra-muscular",
+        "site": "Upper arm"
+      }
+    ]
+  },
+  {
+    "age_months": 192,
+    "vaccines": [
+      {
+        "name": "Td (16 years)",
+        "description": "Tetanus and Diphtheria toxoid at 16 years.",
+        "dose": "0.5 ml",
+        "route": "Intra-muscular",
+        "site": "Upper arm"
+      }
+    ]
+  },
+  {
+    "age_group": "pregnant",
+    "vaccines": [
+      {
+        "name": "Td-1",
+        "description": "First dose of Td given early in pregnancy.",
+        "dose": "0.5 ml",
+        "route": "Intra-muscular",
+        "site": "Upper arm"
+      },
+      {
+        "name": "Td-2",
+        "description": "Second dose of Td at least 4 weeks after Td-1.",
+        "dose": "0.5 ml",
+        "route": "Intra-muscular",
+        "site": "Upper arm"
+      },
+      {
+        "name": "Td-Booster",
+        "description": "Single booster if previously immunized within 3 years.",
+        "dose": "0.5 ml",
+        "route": "Intra-muscular",
+        "site": "Upper arm"
+      }
+    ]
+  }
+]

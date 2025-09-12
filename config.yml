@@ -1,0 +1,36 @@
+# config.yml
+
+# The language your NLU model should be trained in.
+language: en
+
+# Pipeline for NLU. This combination is robust and effective.
+pipeline:
+- name: WhitespaceTokenizer
+- name: RegexFeaturizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+- name: CountVectorsFeaturizer
+  analyzer: "char_wb"
+  min_ngram: 1
+  max_ngram: 4
+- name: DIETClassifier
+  epochs: 100
+- name: EntitySynonymMapper
+# This is the GATEKEEPER for your entire system.
+# If DIETClassifier's top prediction is below 95% confident, this component
+# will override it and trigger the 'nlu_fallback' intent.
+- name: FallbackClassifier
+  threshold: 0.95
+  ambiguity_threshold: 0.1
+
+# Policies that decide what the bot does next.
+policies:
+- name: MemoizationPolicy
+- name: RulePolicy      # Crucial for executing our simple, high-confidence rules.
+- name: UnexpecTEDIntentPolicy
+  max_history: 5
+  epochs: 100
+- name: TEDPolicy       # Handles the context of multi-turn conversations.
+  max_history: 5
+  epochs: 100
+assistant_id: 20250908-141345-complex-amplifier

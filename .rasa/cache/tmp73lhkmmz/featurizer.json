@@ -1,0 +1,91 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "ask_disease_info": 0,
+        "ask_emergency_contacts": 1,
+        "ask_general_health_tips": 2,
+        "ask_outbreak_alerts": 3,
+        "ask_prevention": 4,
+        "ask_symptoms": 5,
+        "ask_vaccination_schedule": 6,
+        "back": 7,
+        "bot_challenge": 8,
+        "goodbye": 9,
+        "greet": 10,
+        "nlu_fallback": 11,
+        "out_of_scope": 12,
+        "provide_age": 13,
+        "provide_location": 14,
+        "provide_pincode": 15,
+        "restart": 16,
+        "session_start": 17,
+        "stop": 18,
+        "thank_you": 19
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "validate_vaccination_form": 13,
+        "validate_outbreak_form": 14,
+        "validate_emergency_form": 15,
+        "action_knowledge_search": 16,
+        "utter_ask_age": 17,
+        "utter_ask_location": 18,
+        "utter_ask_location_outbreak": 19,
+        "utter_ask_pincode": 20,
+        "utter_disease_guidelines_fallback": 21,
+        "utter_disease_info_covid-19": 22,
+        "utter_emergency_contacts_api": 23,
+        "utter_fallback": 24,
+        "utter_general_health_tips": 25,
+        "utter_goodbye": 26,
+        "utter_greet": 27,
+        "utter_iamabot": 28,
+        "utter_outbreak_alerts_api": 29,
+        "utter_outbreak_alerts_fallback": 30,
+        "utter_pincode_not_found": 31,
+        "utter_prevention_malaria": 32,
+        "utter_symptoms_tuberculosis": 33,
+        "utter_thank_you": 34,
+        "utter_vaccination_schedule_api": 35,
+        "utter_vaccination_schedule_fallback": 36,
+        "vaccination_form": 37,
+        "outbreak_form": 38,
+        "emergency_form": 39
+      },
+      "entities": {
+        "age": 0,
+        "disease": 1,
+        "location": 2,
+        "pincode": 3
+      },
+      "slots": {
+        "age_0": 0,
+        "location_0": 1,
+        "pincode_0": 2
+      },
+      "active_loop": {
+        "vaccination_form": 0,
+        "outbreak_form": 1,
+        "emergency_form": 2
+      }
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

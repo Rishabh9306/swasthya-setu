@@ -1,0 +1,199 @@
+version: "3.1"
+
+# All intents the NLU should be aware of, including those from validation
+intents:
+  - greet
+  - goodbye
+  - thank_you
+  - bot_challenge
+  - affirm
+  - deny
+  - stop
+  - provide_disease
+  - ask_vaccination_schedule
+  - ask_outbreak_alerts
+  - ask_emergency_contacts
+  - ask_disease_info
+  - ask_symptoms
+  - ask_prevention
+  - ask_general_health_tips
+  - provide_age
+  - provide_location
+  - provide_pincode
+  - nlu_fallback
+  - ask_medicine_info
+  - compare_medicines
+  - ask_vaccination_schedule_pregnant
+
+
+# All entities the NLU can extract.
+entities:
+  - age
+  - location
+  - pincode
+  - disease
+  - medicine  
+
+# Information the bot can remember during a conversation.
+slots:
+  age:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: age
+  location:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: location
+  pincode:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: pincode
+
+forms:
+  vaccination_form:
+    required_slots:
+    - age
+    - location
+
+actions:
+  - action_default_fallback_orchestrator
+  - action_ask_vaccination_schedule
+  - action_ask_outbreak_alerts
+  - action_ask_emergency_contacts
+  - action_handle_disease_query
+  - utter_greet
+  - utter_goodbye
+  - utter_thank_you
+  - utter_iamabot
+  - utter_fallback
+  - utter_ask_age
+  - utter_ask_location
+  - utter_ask_location_outbreak
+  - utter_ask_pincode
+  - utter_vaccination_schedule_api
+  - utter_vaccination_schedule_fallback
+  - utter_outbreak_alerts_api
+  - utter_outbreak_alerts_fallback
+  - utter_emergency_contacts_api
+  - utter_emergency_contacts_fallback
+  - utter_disease_guidelines_fallback
+  - utter_disease_info_measles
+  - utter_symptoms_measles
+  - utter_prevention_measles
+  - utter_disease_info_covid-19
+  - utter_symptoms_covid-19
+  - utter_prevention_covid-19
+  - utter_disease_info_malaria
+  - utter_symptoms_malaria
+  - utter_prevention_malaria
+  - utter_disease_info_tuberculosis
+  - utter_symptoms_tuberculosis
+  - utter_prevention_tuberculosis
+  - utter_general_health_tips
+  - utter_pincode_not_found
+  - utter_geofallback_contact_info
+  - utter_found_in_kb
+  - utter_found_in_glossary
+  - action_medicine_lookup
+
+# The complete library of bot responses
+responses:
+  utter_greet:
+  - text: "Namaste! How can I help you today with your health questions?"
+  utter_goodbye:
+  - text: "Goodbye! Stay safe and healthy."
+  utter_thank_you:
+  - text: "You're welcome!"
+  utter_iamabot:
+  - text: "I’m Swasthya Setu, your health assistant. I can help with vaccines, disease prevention, emergency contacts, and more. Powered by Team CodeSmith."
+  utter_fallback:
+  - text: "I couldn’t find an exact answer to that. You can try rephrasing, or ask me about vaccination schedule, symptoms, medicines, prevention tips, or emergency contacts."
+  
+  # --- Information Gathering Prompts ---
+  utter_ask_age:
+  - text: "To provide the vaccination schedule, I need to know the age. How old is the person(in months)?"
+  utter_ask_location:
+  - text: "Please share your city or district so I can give you accurate vaccine schedules accordingly."
+  utter_ask_location_outbreak:
+  - text: "Please share your district so I can give you accurate outbreak alerts."
+  utter_ask_pincode:
+  - text: "To find emergency contacts, please provide your 6-digit pincode."
+  
+  # --- Your New, Improved API Responses ---
+  utter_vaccination_schedule_api:
+  - text: "Here’s the recommended vaccine schedule for a {age} old in {location}: [API_RESULT_PLACEHOLDER]. Please confirm with your nearest health center or ASHA worker."
+  utter_vaccination_schedule_fallback:
+  - text: "I couldn’t fetch the live vaccination schedule for {age} old in {location}. For accurate details, please visit your nearest health center or ASHA worker."
+  
+  utter_outbreak_alerts_api:
+  - text: "Live IDSP Report for {location}: [API_RESULT_PLACEHOLDER]. Please follow all local advisories."
+  utter_outbreak_alerts_fallback:
+  - text: "I'm unable to connect to the surveillance portal for {location}. For official alerts, check your state's MoHFW website."
+
+  utter_emergency_contacts_api:
+  - text: "Based on pincode {pincode}, facilities are: [API_RESULT_PLACEHOLDER]. For emergencies, call 112."
+  utter_emergency_contacts_fallback:
+  - text: "I couldn’t fetch details for pincode {pincode} right now. For immediate help, please dial 112 (all emergencies) or 108 (ambulance)."
+
+  utter_disease_guidelines_fallback:
+  - text: "I don’t have specific details on that disease. Please consult a doctor for proper advice, or call 108 for emergency assistance."
+  
+  # COVID-19
+  utter_disease_info_covid-19:
+  - text: "COVID-19 is a respiratory illness. For details, consult the MoHFW website. For emergencies, call 108."
+  utter_symptoms_covid-19:
+  - text: "Common symptoms of COVID-19 include fever, cough, and tiredness. Please consult a healthcare provider."
+  utter_prevention_covid-19:
+  - text: "To prevent COVID-19, practice good hygiene, wear a mask in crowded areas, and get vaccinated."
+  
+  # Malaria
+  utter_disease_info_malaria:
+  - text: "Malaria is a mosquito-borne disease. Symptoms include fever. Consult a doctor for diagnosis."
+  utter_symptoms_malaria:
+  - text: "Symptoms of Malaria include high fever, chills, and flu-like illness."
+  utter_prevention_malaria:
+  - text: "To prevent Malaria, use mosquito nets and repellent. Keep your surroundings clean. For emergencies, call 108."
+
+  # Tuberculosis
+  utter_disease_info_tuberculosis:
+  - text: "Tuberculosis (TB) is a bacterial infection of the lungs. It is treatable with antibiotics."
+  utter_symptoms_tuberculosis:
+  - text: "Symptoms of Tuberculosis include a persistent cough. See a doctor for diagnosis. For emergencies, call 108."
+  utter_prevention_tuberculosis:
+  - text: "The BCG vaccine is used for prevention of Tuberculosis. Maintaining a healthy lifestyle is also key."
+
+  # Measles
+  utter_disease_info_measles:
+  - text: "Measles is a highly contagious viral infection serious for small children."
+  utter_symptoms_measles:
+  - text: "Symptoms of measles include a high fever, cough, and a distinctive rash."
+  utter_prevention_measles:
+  - text: "The best prevention against measles is the MMR vaccine."
+  
+  # --- General and Orchestrator Responses ---
+  utter_general_health_tips:
+  - text: "Eat a balanced diet, get regular exercise,, ensure you get enough sleep and stay hydrated for a healthy lifestyle."
+
+  utter_pincode_not_found:
+  - text: "I'm sorry, I don't have specific contact information for pincode {pincode}. Please ensure it is a valid 6-digit pincode or call 112 for any emergency."
+  
+  utter_geofallback_contact_info:
+  - text: |
+      Based on your pincode, here is some information for your district headquarters:
+      {contact_en}
+  
+  utter_found_in_kb:
+  - text: "{answer}"
+  
+  utter_found_in_glossary:
+  - text: |
+      Here’s what I found in my health glossary:
+      {term} → {definition}.
+
+  utter_api_down_medicine:
+  - text: "I'm having trouble accessing the medicine API right now. Please try again in a moment."
+  utter_ask_for_medicine:
+  - text: "Of course, which medicine would you like to know about?"

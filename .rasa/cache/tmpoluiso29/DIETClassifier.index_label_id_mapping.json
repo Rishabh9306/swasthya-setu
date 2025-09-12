@@ -1,0 +1,23 @@
+{
+  "0": "affirm",
+  "1": "ask_disease_info",
+  "2": "ask_emergency_contacts",
+  "3": "ask_general_health_tips",
+  "4": "ask_medicine_info",
+  "5": "ask_outbreak_alerts",
+  "6": "ask_prevention",
+  "7": "ask_symptoms",
+  "8": "ask_vaccination_schedule",
+  "9": "ask_vaccination_schedule_pregnant",
+  "10": "bot_challenge",
+  "11": "compare_medicines",
+  "12": "deny",
+  "13": "goodbye",
+  "14": "greet",
+  "15": "provide_age",
+  "16": "provide_disease",
+  "17": "provide_location",
+  "18": "provide_pincode",
+  "19": "stop",
+  "20": "thank_you"
+}

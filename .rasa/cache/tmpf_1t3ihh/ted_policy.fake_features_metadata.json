@@ -1,0 +1,100 @@
+{
+  "slots": [
+    {
+      "data_type": "sentence",
+      "attribute": "slots",
+      "origin": "SingleStateFeaturizer",
+      "is_sparse": true,
+      "shape": [
+        0,
+        3
+      ],
+      "safetensors_key": "slots_0"
+    }
+  ],
+  "intent": [
+    {
+      "data_type": "sentence",
+      "attribute": "intent",
+      "origin": "e2e_run_CountVectorsFeaturizer3",
+      "is_sparse": true,
+      "shape": [
+        0,
+        19
+      ],
+      "safetensors_key": "intent_0"
+    }
+  ],
+  "entities": [
+    {
+      "data_type": "sentence",
+      "attribute": "entities",
+      "origin": "SingleStateFeaturizer",
+      "is_sparse": true,
+      "shape": [
+        0,
+        4
+      ],
+      "safetensors_key": "entities_0"
+    }
+  ],
+  "active_loop": [
+    {
+      "data_type": "sentence",
+      "attribute": "active_loop",
+      "origin": "SingleStateFeaturizer",
+      "is_sparse": true,
+      "shape": [
+        0,
+        3
+      ],
+      "safetensors_key": "active_loop_0"
+    }
+  ],
+  "text": [
+    {
+      "data_type": "sequence",
+      "attribute": "text",
+      "origin": [
+        "e2e_run_RegexFeaturizer1",
+        "e2e_run_LexicalSyntacticFeaturizer2",
+        "e2e_run_CountVectorsFeaturizer3",
+        "e2e_run_CountVectorsFeaturizer4"
+      ],
+      "is_sparse": true,
+      "shape": [
+        0,
+        5635
+      ],
+      "safetensors_key": "text_0"
+    },
+    {
+      "data_type": "sentence",
+      "attribute": "text",
+      "origin": [
+        "e2e_run_RegexFeaturizer1",
+        "e2e_run_CountVectorsFeaturizer3",
+        "e2e_run_CountVectorsFeaturizer4"
+      ],
+      "is_sparse": true,
+      "shape": [
+        0,
+        5611
+      ],
+      "safetensors_key": "text_1"
+    }
+  ],
+  "action_name": [
+    {
+      "data_type": "sentence",
+      "attribute": "action_name",
+      "origin": "e2e_run_CountVectorsFeaturizer3",
+      "is_sparse": true,
+      "shape": [
+        0,
+        18
+      ],
+      "safetensors_key": "action_name_0"
+    }
+  ]
+}

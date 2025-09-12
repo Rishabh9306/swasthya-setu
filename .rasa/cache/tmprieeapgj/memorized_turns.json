@@ -1,0 +1,13 @@
+{
+  "lookup": {
+    "eJyLrq6NBQAEOAGx": "action_listen",
+    "eJwti1EKgCAQRK+yB5CoX68iIlJLLNgquvkj3r2N+pt5b8aNaWCUij3EXSizhfGFwPFCC39J1ARZty1lae/oVOm2ZfUK74ZVGbKQEKp2qr0BYj2JhVJzpwOD0jn9A8VlKoQ=": "action_ask_vaccination_schedule",
+    "eJytjk0KAzEIRq/iAYbSbnOVEIJkpJWmZohONmHuXvtzgC6683vvE43zWGBunUbGYtwkwPwMWfBBAb6hshqJd7U201fp6jJeTufkcFfqzkiMjcl1dJ0WYPElC7D1Nnil7PT47R7qPQ8shQXfWcuN1r3SXz5IT8WsWqE=": "action_listen",
+    "eJy9j0EOAiEMRa/SAxCjW64yIaRhGm1EmFCGDeHuVsfZqXHlrv+/3/R36sNAXwo1j6FyThb6NviEN7LwEpGlUtKsxFzlETornE6Ho1NzFSrqUapcmRRPip0BTrpULSwlN57Jqzt+u4dy9Q1D4IRPLeFC8xrpfw2+fGwg5oDb7ucCe+ZNix2N4e6kuo0S": "action_ask_vaccination_schedule",
+    "eJy9UDsOwjAMvYoPECFYc5UqiqLUAovgVHGaJerdMZRugBiAze8nP3voi4E+FWw+xEqZLfR18BwuaOEBEklFVq+kXOVmOqo4HHZ7p+QsWJRDrlQJVR5UdgaINVQtTCU3GtEru3y2L8jZtxAjcbhjiScc54T/a/DmYgMpx7BmXxfYPE9abNIvnvHFcu4K/afGzQ==": "action_listen",
+    "eJw1y8EJwCAMheFVMoCU9uoqIiI2h4CNoqkXcfcG2t7y+L+4uQzM2nCEmIQKW5jvETheaOEbmbogq+25SFeUS4qvd8e2ey13x6YBWUgI1bjfeAPE+i4WaiuDTgx/Wss/lhwxCA==": "action_ask_outbreak_alerts",
+    "eJy1jjEKwzAMRa/iA4TSrr6KMUJNNYi4UrCULCZ3ryDN3qWbPu99vso4pjTWTjvg7KyS0zgPEHxTTt/Q2JwkXGvqFlLTGU+/PG73GmQz6gFInJ0pnHI5dUosUfec1q47vwgudPw2j7aAbv7shAtgo+72j1/qB96jZbU=": "action_listen",
+    "eJwty0EKwCAMBMCv5AFS2qtfERHRHAJtFE29iH9voN6yuxM3l4FZG44Qk1BhC/M/AscHLexwUxdktf0u0hVV4lSyAncdp9fh7di0RxYSQiVuE2+AWJ/FQm1lUMawl7X8B/uTL6M=": "action_ask_emergency_contacts",
+    "eJytjsEJwzAMRVfxAKG0V69ijDCOKKKJZCw1UEx2ryAeoIfeJL33+UrjXMJoHQ8o1Ug4hnENwGXHGOaykRqyu7qJqUuNuMrqQnrc7tnBW7H7HdnICF1JU8lLIPawxdC6HLQiTHL+1l30BbhjfyLXD1Rhc6B//yV/AYCcZCE=": "action_listen"
+  }
+}

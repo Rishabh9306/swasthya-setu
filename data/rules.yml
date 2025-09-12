@@ -1,0 +1,98 @@
+# data/rules.yml
+
+version: "3.1"
+
+rules:
+
+# This is the single most important rule. It is the entry point to our
+# smart triage system and ONLY runs when NLU confidence is below 95%.
+- rule: Activate Fallback Orchestrator when NLU is uncertain
+  steps:
+  - intent: nlu_fallback
+  - action: action_default_fallback_orchestrator
+
+# --- RULES FOR THE "EXPRESS LANE" ---
+# These rules will ONLY be used if NLU confidence is >= 95%.
+
+# Handle simple chitchat instantly.
+- rule: Handle Greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Handle Goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Handle Thank You
+  steps:
+  - intent: thank_you
+  - action: utter_thank_you
+
+- rule: Handle Bot Challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+# Start the multi-turn API conversations.
+- rule: Activate Vaccination Form
+  steps:
+  - intent: ask_vaccination_schedule
+  - action: vaccination_form
+  - active_loop: vaccination_form
+
+- rule: Handle Vaccination Schedule for Pregnant Women Directly
+  steps:
+  - intent: ask_vaccination_schedule_pregnant
+  - action: action_ask_vaccination_schedule
+
+- rule: Submit Vaccination Form
+  condition:
+  - active_loop: vaccination_form
+  steps:
+  - action: vaccination_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_ask_vaccination_schedule
+
+- rule: Activate Outbreak Alert Action
+  steps:
+  - intent: ask_outbreak_alerts
+  - action: action_ask_outbreak_alerts
+
+- rule: Activate Emergency Contacts Action when user provides pincode directly
+  steps:
+  - intent: provide_pincode
+  - action: action_ask_emergency_contacts
+
+- rule: Activate Emergency Contacts Action when user asks
+  steps:
+  - intent: ask_emergency_contacts
+  - action: action_ask_emergency_contacts
+
+# Handle single-turn information requests.
+- rule: Handle all disease-related questions
+  steps:
+  - or:
+    - intent: ask_disease_info
+    - intent: ask_symptoms
+    - intent: ask_prevention
+  - action: action_handle_disease_query
+    
+- rule: Handle General Health Tips
+  steps:
+  - intent: ask_general_health_tips
+  - action: utter_general_health_tips
+
+# Medicine API
+- rule: Activate medicine lookup for a single medicine query
+  steps:
+  - intent: ask_medicine_info
+  - action: action_medicine_lookup
+
+- rule: Activate medicine lookup for a comparison query
+  steps:
+  - intent: compare_medicines
+  - action: action_medicine_lookup

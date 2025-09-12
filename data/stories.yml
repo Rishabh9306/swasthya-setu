@@ -1,0 +1,32 @@
+# data/stories.yml
+
+version: "3.1"
+
+stories:
+
+- story: Provide location to complete the outbreak alerts flow
+  steps:
+  # The bot has already asked for the location
+  - user: "my district is Cuttack"
+    intent: provide_location
+    entities:
+    - location: "Cuttack"
+  - action: action_ask_outbreak_alerts
+
+- story: Provide pincode to complete the emergency contacts flow
+  steps:
+  # The bot has already asked for the pincode
+  - user: "my pincode is 751001"
+    intent: provide_pincode
+    entities:
+    - pincode: "751001"
+  - action: action_ask_emergency_contacts
+
+- story: Outbreak Alert Multi-Turn
+  steps:
+  - intent: ask_outbreak_alerts
+  - action: action_ask_outbreak_alerts
+  - intent: provide_location
+    entities:
+    - location: "Odisha"
+  - action: action_ask_outbreak_alerts

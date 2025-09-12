@@ -1,0 +1,77 @@
+version: "3.1"
+
+nlu:
+# --- Testing Core Conversational Intents ---
+- intent: greet
+  examples: |
+    - hey there assistant
+    - Namaskar bot
+
+- intent: goodbye
+  examples: |
+    - that's all, see ya
+    - ok i am done now, thanks
+
+- intent: thank_you
+  examples: |
+    - thx a lot for the help
+    - Thanks for the information
+
+- intent: bot_challenge
+  examples: |
+    - are you a real person or an AI?
+    - tell me about yourself bot
+
+# --- Testing All Disease Query Types ---
+- intent: ask_disease_info
+  examples: |
+    - give me all details about [tuberculosis](disease)
+    - [টাইফয়েড](disease) কি?
+
+- intent: ask_symptoms
+  examples: |
+    - what are the first symtoms of [malaria](disease)? # Note the typo in 'symtoms'
+    - I feel sick and have a [fever](symptom), what could it be?
+
+- intent: ask_prevention
+  examples: |
+    - how to avoid getting [jaundice](disease)
+    - best way to stay safe from germs
+
+# --- Testing NEW API-driven Intents ---
+- intent: ask_vaccination_schedule
+  examples: |
+    - For a [3 year old](age), what's the vaccine sched? # Note the abbreviation 'sched'
+    - tikakaran chart for babies
+
+- intent: ask_outbreak_alerts
+  examples: |
+    - is [dengue](disease) spreading in [kolkata](location)?
+    - Any health alerts for [Cuttack](location)? # Testing a specific Odisha district
+
+- intent: ask_emergency_contacts
+  examples: |
+    - ambulance number for pincode [560001](pincode)
+    - where is the nearest government hospital?
+    - give me the national health helpline
+
+- intent: ask_general_health_tips
+  examples: |
+    - general tips for good health
+    - what are some essential hygiene practices
+
+# --- Testing NEW Information-providing Intents ---
+- intent: provide_pincode
+  examples: |
+    - the pin code is [751001](pincode)
+    - its [110001](pincode)
+
+- intent: provide_age
+  examples: |
+    - for my child who is [4](age)
+    - age is [six months old](age)
+
+- intent: provide_location
+  examples: |
+    - [Bhubaneswar](location) # Testing a single-word capital
+    - my city is [Pune](location)
