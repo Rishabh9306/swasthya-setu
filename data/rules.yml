@@ -42,6 +42,11 @@ rules:
   - action: vaccination_form
   - active_loop: vaccination_form
 
+- rule: Handle Vaccination Schedule for Pregnant Women Directly
+  steps:
+  - intent: ask_vaccination_schedule_pregnant
+  - action: action_ask_vaccination_schedule
+
 - rule: Submit Vaccination Form
   condition:
   - active_loop: vaccination_form
@@ -57,7 +62,12 @@ rules:
   - intent: ask_outbreak_alerts
   - action: action_ask_outbreak_alerts
 
-- rule: Activate Emergency Contacts Action
+- rule: Activate Emergency Contacts Action when user provides pincode directly
+  steps:
+  - intent: provide_pincode
+  - action: action_ask_emergency_contacts
+
+- rule: Activate Emergency Contacts Action when user asks
   steps:
   - intent: ask_emergency_contacts
   - action: action_ask_emergency_contacts
@@ -75,3 +85,14 @@ rules:
   steps:
   - intent: ask_general_health_tips
   - action: utter_general_health_tips
+
+# Medicine API
+- rule: Activate medicine lookup for a single medicine query
+  steps:
+  - intent: ask_medicine_info
+  - action: action_medicine_lookup
+
+- rule: Activate medicine lookup for a comparison query
+  steps:
+  - intent: compare_medicines
+  - action: action_medicine_lookup

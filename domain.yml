@@ -20,8 +20,11 @@ intents:
   - provide_age
   - provide_location
   - provide_pincode
-  # The special intent triggered by the FallbackClassifier
   - nlu_fallback
+  - ask_medicine_info
+  - compare_medicines
+  - ask_vaccination_schedule_pregnant
+
 
 # All entities the NLU can extract.
 entities:
@@ -29,6 +32,7 @@ entities:
   - location
   - pincode
   - disease
+  - medicine  
 
 # Information the bot can remember during a conversation.
 slots:
@@ -93,11 +97,12 @@ actions:
   - utter_geofallback_contact_info
   - utter_found_in_kb
   - utter_found_in_glossary
+  - action_medicine_lookup
 
 # The complete library of bot responses
 responses:
   utter_greet:
-  - text: "Hello! How can I help you today with your health questions?"
+  - text: "Namaste! How can I help you today with your health questions?"
   utter_goodbye:
   - text: "Goodbye! Stay safe and healthy."
   utter_thank_you:
@@ -105,15 +110,15 @@ responses:
   utter_iamabot:
   - text: "I’m Swasthya Setu, your health assistant. I can help with vaccines, disease prevention, emergency contacts, and more. Powered by Team CodeSmith."
   utter_fallback:
-  - text: "I couldn’t find an exact answer to that. You can try rephrasing, or ask me about vaccines, symptoms, prevention tips, or emergency contacts."
+  - text: "I couldn’t find an exact answer to that. You can try rephrasing, or ask me about vaccination schedule, symptoms, medicines, prevention tips, or emergency contacts."
   
   # --- Information Gathering Prompts ---
   utter_ask_age:
-  - text: "To provide the vaccination schedule, I need to know the age. How old is the person?"
+  - text: "To provide the vaccination schedule, I need to know the age. How old is the person(in months)?"
   utter_ask_location:
   - text: "Please share your city or district so I can give you accurate vaccine schedules accordingly."
   utter_ask_location_outbreak:
-  - text: "Please share your city or district so I can give you accurate outbreak alerts."
+  - text: "Please share your district so I can give you accurate outbreak alerts."
   utter_ask_pincode:
   - text: "To find emergency contacts, please provide your 6-digit pincode."
   
@@ -130,7 +135,7 @@ responses:
 
   utter_emergency_contacts_api:
   - text: "Based on pincode {pincode}, facilities are: [API_RESULT_PLACEHOLDER]. For emergencies, call 112."
-  utter_emergency_contacts_fallback: # ADDED a response for this action
+  utter_emergency_contacts_fallback:
   - text: "I couldn’t fetch details for pincode {pincode} right now. For immediate help, please dial 112 (all emergencies) or 108 (ambulance)."
 
   utter_disease_guidelines_fallback:
@@ -170,22 +175,25 @@ responses:
   
   # --- General and Orchestrator Responses ---
   utter_general_health_tips:
-  - text: "Stay hydrated, eat a balanced diet, get regular exercise, and ensure you get enough sleep for a healthy lifestyle."
+  - text: "Eat a balanced diet, get regular exercise,, ensure you get enough sleep and stay hydrated for a healthy lifestyle."
 
   utter_pincode_not_found:
   - text: "I'm sorry, I don't have specific contact information for pincode {pincode}. Please ensure it is a valid 6-digit pincode or call 112 for any emergency."
   
   utter_geofallback_contact_info:
   - text: |
-      Based on your pincode, here is the contact information for the district headquarters:
-      - English Contact: {contact_en}
-      - Odia Contact: {contact_or}
+      Based on your pincode, here is some information for your district headquarters:
+      {contact_en}
   
   utter_found_in_kb:
-  - text: "I found this in my knowledge base that might help: {answer}"
+  - text: "{answer}"
   
   utter_found_in_glossary:
   - text: |
       Here’s what I found in my health glossary:
       {term} → {definition}.
-      Would you like me to also share symptoms or prevention tips?
+
+  utter_api_down_medicine:
+  - text: "I'm having trouble accessing the medicine API right now. Please try again in a moment."
+  utter_ask_for_medicine:
+  - text: "Of course, which medicine would you like to know about?"

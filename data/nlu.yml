@@ -358,6 +358,10 @@ nlu:
     - [Sambalpur](location)
     - [Subarnapur](location)
     - [Sundargarh](location)
+    - my district is [raisen](location)
+    - the location is [surguja](location)
+    - its [palwal](location)
+    - I am in [odisha](location)
 
 - intent: provide_pincode
   examples: |
@@ -392,6 +396,37 @@ nlu:
     - [Dengue](disease)
     - It's [jaundice](disease)
     - I have a question about the [flu](disease)
+
+- intent: ask_medicine_info
+  examples: |
+    - what is [crocin](medicine)
+    - tell me about [pan-40](medicine)
+    - give me info on [acetaminophen](medicine)
+    - [dolo-650](medicine) details
+    - what is [augmentin](medicine) used for
+    - info on [atorva](medicine)
+    - [metformin](medicine) details please
+    - is [sinarest](medicine) safe?
+    - what is [dolo=650](medicine)
+
+- intent: compare_medicines
+  examples: |
+    - compare [pan-d](medicine) and [pan-40](medicine)
+    - [pan d](medicine) vs [pan 40](medicine)
+    - difference between [crocin](medicine) and [combiflam](medicine)
+    - difference between [amlong](medicine) and [telma](medicine)
+    - [brufen](medicine) vs [combiflam](medicine)
+
+- intent: ask_vaccination_schedule_pregnant
+  examples: |
+    - what is the vaccine schedule for a pregnant woman?
+    - vaccines for expectant mothers
+    - pregnancy me kaun se tike lagte hain?
+    - I am pregnant, which vaccines do I need?
+    - vaccination during pregnancy
+    - garbhavastha ke dauran tikakaran
+    - ഗർഭകാലത്ത് ഏതൊക്കെ വാക്സിനുകൾ ആവശ്യമാണ്?
+    - கர்ப்பிணிப் பெண்களுக்கான தடுப்பூசி அட்டவணை
 
 - synonym: fever
   examples: |
@@ -461,3 +496,54 @@ nlu:
     - breathing difficulty
     - rash
     - vomiting
+
+- lookup: location
+  examples: |
+    - Visakhapatanam
+    - Cachar
+    - Hailakandi
+    - Tinsukia
+    - Patna
+    - Samastipur
+    - Baloda Bazar
+    - Janjgir-Champa
+    - Surguja
+    - Navsari
+    - Palwal
+    - Solan
+    - Kupwara
+    - Rajouri
+    - Khunti
+    - Kodarma
+    - Chamarajanagar
+    - Mysuru
+    - Malappuram
+    - Palakkad
+    - Thrissur
+    - Raisen
+    - Chandrapur
+    - Pune
+    - Yavatmal
+    - Churachandpur
+    - West Khasi Hills
+    - Aizawl
+    - Dimapur
+    - Koraput
+    - Rayagada
+    - Sundargarh
+    - Amritsar
+    - Bhilwara
+    - Tonk
+    - Cuddalore
+    - Dindigul
+    - Nagapattinam
+    - Viluppuram
+    - Karimnagar
+    - Mau
+    - Sitapur
+    - Chamoli
+    - North 24 Parganas
+    - Murshidabad
+    - Purba Bardhaman
+    - West Bardhaman
+    - Odisha
