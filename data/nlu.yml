@@ -1,0 +1,549 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - Hello
+    - Hey there
+    - Good morning
+    - Good evening
+    - whats up
+    - yo
+    - hey bot
+    - namaskar
+    - Hello assistant
+    - hey there assistant
+    - Namaskaram
+    - Kaise ho
+    - Kya haal hai
+    - नमस्ते
+    - ନମସ୍କାର
+    - নমস্কার
+    - Nomoshkar
+    - नमस्कार
+    - ਸਤ ਸ੍ਰੀ ਅਕਾਲ
+    - Satsriakal bot
+    - வணக்கம்
+    - నమస్కారం
+
+- intent: goodbye
+  examples: |
+    - Goodbye
+    - Bye
+    - See you later
+    - cya
+    - Take care
+    - Bye bye
+    - Alvida
+    - Phir milenge
+    - Okay bye
+    - Got to go
+    - Gotta run, thanks
+    - I think I have all the info, bye
+    - that's all for now
+    - Ok, I'm done
+    - chalo theek hai
+    - My kaam is done, bye
+    - अलविदा
+    - फिर मिलेंगे
+    - ବିଦାୟ
+    - বিদায়
+    - पुन्हा भेटू
+    - ਅਲਵਿਦਾ
+    - விடைபெறுகிறেன்
+    - వీడ్కోలు
+
+- intent: thank_you
+  examples: |
+    - Thanks
+    - Thank you
+    - Much appreciated
+    - Thanks a lot
+    - thx
+    - ty
+    - Thank you so much
+    - bahut dhanyavaad
+    - Dhanyavaad
+    - Shukriya
+    - bahut meherbaani
+    - Thanks, that helped
+    - That was very helpful, thanks
+    - I appreciate it
+    - That's exactly what I needed, thank you
+    - धन्यवाद
+    - शुक्रिया
+    - ଧନ୍ୟବାଦ
+    - ধন্যবাদ
+    - ਧੰਨਵਾਦ
+    - நன்றி
+    - ధన్యవాదాలు
+
+- intent: ask_disease_info
+  examples: |
+    - Tell me about [COVID-19](disease)
+    - What is [malaria](disease)?
+    - Give me information on [tuberculosis](disease)
+    - What do you know about [Tuberculosis](disease)?
+    - [Dengue](disease) ke baare mein detail me batao
+    - Explain [jaundice](disease) to me
+    - I want to know about the [flu](disease)
+    - Can you explain what [malaria](disease) is?
+    - Tell me the details for [jaundice](disease)
+    - [TB](disease) ke bare me jankari chahiye
+    - [டைფய়েড](disease) பற்றி சொல்லுங்கள்
+    - [మలేరియా](disease) అంటే ఏమిటి?
+    - [मलेरिया](disease) क्या है?
+    - [ଯକ୍ଷ୍ମା](disease) ବିଷୟରେ ସୂଚନା ଦିଅନ୍ତୁ
+    - [ম্যালেরিয়া](disease) কি?
+    - [मलेरिया](disease) म्हणजे काय?
+    - [ਮਲੇਰੀਆ](disease) ਕੀ ਹੈ?
+    - [மலேরியா](disease) என்றால் என்ன?
+
+- intent: ask_symptoms
+  examples: |
+    - What are the symptoms of [COVID-19](disease)?
+    - what are the symtoms of [covid](disease)?
+    - I have a high [fever](symptom), what disease is this?
+    - I've been [coughing](symptom) a lot, what could it be?
+    - My son has a strange [rash](symptom)
+    - Feeling very [tired](symptom), is that a symptom?
+    - Signs of [malaria](disease)
+    - How do I know if I got [malaria](disease)
+    - How would I know if I have the [flu](disease)?
+    - [Tuberculosis](disease) ke lakshan kya hai?
+    - [dengue](disease) kaise pata chalta hai?
+    - what does a persistent [cough](symptom) mean
+    - [காசநோயின்](disease) அறிகுறிகள்
+    - [మలేరియా](disease) యొక్క లక్షణాలను చెప్పండి
+    - [कोविड-19](disease) के लक्षण क्या हैं?
+    - [ମ୍ୟାଲେରିଆର](disease) ଚିହ୍ନ
+    - [ডেঙ্গুর](disease) লক্ষণ বলুন
+    - [कोविड-१९](disease) ची लक्षणे कोणती?
+    - [ਕੋਵਿਡ-੧੯](disease) ਦੇ ਲੱਛਣ ਕੀ ਹਨ?
+
+- intent: ask_prevention
+  examples: |
+    - How to prevent [COVID-19](disease)?
+    - what is the best way to avoid the [flu](disease)?
+    - How do you stop yourself from getting [malaria](disease)?
+    - What can I do to not get [dengue](disease)?
+    - Is there a way to avoid [typhoid](disease)?
+    - How to prevent getting sick from [cholera](disease)
+    - preventive measures for [jaundice](disease)
+    - [dengue](disease) se safe kaise rahe?
+    - [malaria](disease) se bachne ka tarika
+    - [TB](disease) se bachav ke tarike
+    - [कोविड-19](disease) से कैसे बचें?
+    - [ମ୍ୟାଲେରିଆକୁ](disease) କିପରି ରୋକାଯାଇପାରିବ?
+    - [ম্যালেরিয়া](disease) কিভাবে প্রতিরোধ করা যায়?
+    - [ਮਲੇਰੀਆ](disease) ਤੋਂ ਕਿਵੇਂ ਬਚਿਆ ਜਾਵੇ?
+    - [మలేరియాను](disease) ఎలా నివారించాలి?
+
+- intent: ask_general_health_tips
+  examples: |
+    - how can i improve my immunity?
+    - What are some general hygiene tips?
+    - How do I stay healthy?
+    - How to stay safe from infections?
+    - best way to stay safe from germs
+    - general tips for good health
+    - what are some essential hygiene practices
+    - tell me how to keep my family healthy
+    - any advice for a healthy lifestyle?
+    - How can I improve my well-being?
+
+- intent: ask_vaccination_schedule
+  examples: |
+    - What is the vaccination schedule?
+    - tell me the child immunization dates
+    - for a [2 month old](age) baby what vaccines are needed?
+    - Is there a government schedule for vaccines?
+    - i need the vaccination list
+    - ਟੀਕਾਕਰਨ ਚਾਰਟ
+    - Tikakaran ka schedule kya hai?
+    - For a [1 year old](age) baby, what is the vaccine schedule?
+    - When should a [2 year old](age) get vaccines?
+    - vaccination for a [5 year old](age) child
+    - What vaccines are compulsory?
+    - immunization schedule for babies
+    - टीकाकरण का शेड्यूल क्या है?
+    - ଟୀକାକରଣ କାର୍ଯ୍ୟସୂଚୀ କ'ଣ?
+    - টিকা দেওয়ার সময়সূচী কি?
+    - लसीकरण वेळापत्रक काय आहे?
+    - தடுப்பூசி அட்டவணை என்ன?
+    # Examples with location only
+    - what is the vaccine schedule in [bhubaneswar](location)
+    - immunization schedule for [cuttack](location)
+    - vaccine list for [mumbai](location)
+    - for a [6 month old](age) baby in [delhi](location) what vaccines are needed
+    - i need the vaccination list for a [1 year old](age) in [pune](location)
+    - what is the schedule for a [5 year old](age) in [Bhubaneswar](location)?
+    - [2 years old](age) vaccine schedule [mumbai](location)
+    - [Cuttack](location) me [5 saal](age) ke bacche ka tikakaran
+    - [भुवनेश्वर](location) में [5 साल](age) के बच्चे का टीकाकरण
+
+- intent: ask_outbreak_alerts
+  examples: |
+    - Are there any outbreaks in [Delhi](location)?
+    - any news on outbreaks in [pune city](location)?
+    - is anything spreading in [delhi](location)??
+    - what are the health warnings for my area?
+    - Is it safe to travel to [mumbai](location)?
+    - Any health alerts for [Cuttack](location)?
+    - what is the current situation in [puri](location)?
+    - Is there a disease outbreak in [Kendrapara](location)?
+    - [mumbai](location) me kuch faila hai kya?
+    - [মুম্বাইতে](location) কি কোনো প্রাদুর্ভাব আছে?
+    - [दिल्ली](location) में कोई प्रकोप है?
+    - [কলকাতায়](location) কি কোনো রোগের প্রাদুর্ভাব আছে?
+    - [मुंबईमध्ये](location) काही उद्रेक आहे کा?
+
+- intent: ask_emergency_contacts
+  examples: |
+    - Which hospital can I go to nearby?
+    - nearest hospital in [jaipur](location)
+    - what is the nearest hospital to [110001](pincode)
+    - hospital near [400001](pincode)
+    - I need emergency help
+    - can you give me a helpline number
+    - what hospitals are in the [delhi](location) area?
+    - list of emergency contacts in my district
+    - Where is the nearest PHC?
+    - ambulance number
+    - call 108
+    - ambulance number for pincode [560001](pincode)
+    - find a hospital in [Delhi](location)
+    - emergency services in [400001](pincode)
+
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - correct
+    - han
+    - haanji
+    - ji haan
+    - हाँ
+    - ହଁ
+    - হ্যাঁ
+    - हो
+    - ਹਾਂ
+    - ஆம்
+    - అవును
+
+- intent: deny
+  examples: |
+    - no
+    - never
+    - not really
+    - no way
+    - nahi
+    - bilkul nahi
+    - नहीं
+    - ନା
+    - না
+    - नाही
+    - ਨਹੀਂ
+    - இல்லை
+    - లేదు
+
+- intent: bot_challenge
+  examples: |
+    - Are you a bot?
+    - Are you a human?
+    - are you an ai?
+    - are you a real person?
+    - Am I talking to a bot?
+    - Who are you?
+    - what can you do bot?
+    - tell me about yourself bot
+    - what are you bot
+    - explain what you can do
+    - Tum bot ho?
+    - क्या तुम एक बोट हो?
+    - আপনি কি একটি বট?
+    - तू बোट आहेस کा?
+
+- intent: provide_age
+  examples: |
+    - [five years old](age)
+    - my age is [30](age)
+    - child's age is [2](age)
+    - the child is [2 years old](age)
+    - [6 months old](age)
+    - he is [45](age)
+    - umar [22 saal](age) hai
+    - for my child who is [4](age)
+    - age is [fifty](age)
+    - बच्चा [1 साल](age) का है
+
+- intent: provide_location
+  examples: |
+    - I am in [Bangalore](location)
+    - [Mumbai](location)
+    - My location is [Delhi](location)
+    - we are currently in [bengaluru](location)
+    - My district is [jaipur](location)
+    - We live in [Kolkata](location)
+    - Main [Mumbai](location) se hoon
+    - [Chennai](location) mein rehta hoon
+    - The district is [Pune](location)
+    - my city is [Pune](location)
+    - the city I live in is [Chennai](location)
+    - it is [Bhubaneswar](location)
+    - the location is [Cuttack](location)
+    - i live in [Jaipur](location)
+    - [bhubaneswar](location)
+    - [delhi](location)
+    - how about [hyderabad](location)?
+    - [Amaravati](location)
+    - [Itanagar](location)
+    - [Dispur](location)
+    - [Patna](location)
+    - [Raipur](location)
+    - [Panaji](location)
+    - [Gandhinagar](location)
+    - [Chandigarh](location)
+    - [Shimla](location)
+    - [Ranchi](location)
+    - [Thiruvananthapuram](location)
+    - [Bhopal](location)
+    - [Imphal](location)
+    - [Shillong](location)
+    - [Aizawl](location)
+    - [Kohima](location)
+    - [Jaipur](location)
+    - [Gangtok](location)
+    - [Hyderabad](location)
+    - [Agartala](location)
+    - [Lucknow](location)
+    - [Dehradun](location)
+    - [Port Blair](location)
+    - [Daman](location)
+    - [Kavaratti](location)
+    - [Puducherry](location)
+    - [Leh](location)
+    - [Jammu](location)
+    - [Srinagar](location)
+    - [New Delhi](location)
+    - [Angul](location)
+    - [Balangir](location)
+    - [Balasore](location)
+    - [Bargarh](location)
+    - [Bhadrak](location)
+    - [Boudh](location)
+    - [Cuttack](location)
+    - [Deogarh](location)
+    - [Dhenkanal](location)
+    - [Gajapati](location)
+    - [Ganjam](location)
+    - [Jagatsinghpur](location)
+    - [Jajpur](location)
+    - [Jharsuguda](location)
+    - [Kalahandi](location)
+    - [Kandhamal](location)
+    - [Kendrapara](location)
+    - [Keonjhar](location)
+    - [Khordha](location)
+    - [Koraput](location)
+    - [Malkangiri](location)
+    - [Mayurbhanj](location)
+    - [Nabarangpur](location)
+    - [Nayagarh](location)
+    - [Nuapada](location)
+    - [Puri](location)
+    - [Rayagada](location)
+    - [Sambalpur](location)
+    - [Subarnapur](location)
+    - [Sundargarh](location)
+    - my district is [raisen](location)
+    - the location is [surguja](location)
+    - its [palwal](location)
+    - I am in [odisha](location)
+
+- intent: provide_pincode
+  examples: |
+    - my pincode is [110001](pincode)
+    - [400001](pincode)
+    - it's [400001](pincode)
+    - [560001](pincode)
+    - how about for pincode [751001](pincode)
+    - pin is [201301](pincode)
+
+- intent: stop
+  examples: |
+    - stop
+    - end conversation
+    - please stop
+    - exit
+    - bas karo
+    - ruk jao
+    - बंद करो
+    - ରୁହନ୍ତୁ
+    - থামો
+    - थांबा
+    - ਰੁਕੋ
+    - நிறுத்து
+    - ఆపు
+
+- intent: provide_disease
+  examples: |
+    - I was asking about [Malaria](disease)
+    - The disease is [COVID-19](disease)
+    - it is [tuberculosis](disease)
+    - [Dengue](disease)
+    - It's [jaundice](disease)
+    - I have a question about the [flu](disease)
+
+- intent: ask_medicine_info
+  examples: |
+    - what is [crocin](medicine)
+    - tell me about [pan-40](medicine)
+    - give me info on [acetaminophen](medicine)
+    - [dolo-650](medicine) details
+    - what is [augmentin](medicine) used for
+    - info on [atorva](medicine)
+    - [metformin](medicine) details please
+    - is [sinarest](medicine) safe?
+    - what is [dolo=650](medicine)
+
+- intent: compare_medicines
+  examples: |
+    - compare [pan-d](medicine) and [pan-40](medicine)
+    - [pan d](medicine) vs [pan 40](medicine)
+    - difference between [crocin](medicine) and [combiflam](medicine)
+    - difference between [amlong](medicine) and [telma](medicine)
+    - [brufen](medicine) vs [combiflam](medicine)
+
+- intent: ask_vaccination_schedule_pregnant
+  examples: |
+    - what is the vaccine schedule for a pregnant woman?
+    - vaccines for expectant mothers
+    - pregnancy me kaun se tike lagte hain?
+    - I am pregnant, which vaccines do I need?
+    - vaccination during pregnancy
+    - garbhavastha ke dauran tikakaran
+    - ഗർഭകാലത്ത് ഏതൊക്കെ വാക്സിനുകൾ ആവശ്യമാണ്?
+    - கர்ப்பிணிப் பெண்களுக்கான தடுப்பூசி அட்டவணை
+
+- synonym: fever
+  examples: |
+    - bukhar
+    - high temperature
+    - ज्वर
+    - ताप
+    - ଜ୍ଵର
+    - জ্বর
+    - ਬੁਖਾਰ
+    - காய்ச்சல்
+    - జ్వరం
+
+- synonym: COVID-19
+  examples: |
+    - corona
+    - coronavirus
+    - covid
+
+- synonym: Tuberculosis
+  examples: |
+    - TB
+    - तपेदिक
+    - यक्ष୍मା
+    - ଯକ୍ଷ୍ମା
+    - যক্ষ্মা
+    - क्षयरोग
+    - ਟੀਬੀ
+    - காசநோய்
+    - క్షయ
+
+- lookup: disease
+  examples: |
+    - COVID-19
+    - Malaria
+    - Tuberculosis
+    - Dengue
+    - Jaundice
+    - Typhoid
+    - Cholera
+    - Flu
+    - Chikungunya
+    - Measles
+
+- lookup: vaccine
+  examples: |
+    - BCG
+    - Polio
+    - DPT
+    - Hepatitis B
+    - Measles
+    - MMR
+    - Tetanus
+    - Covid-19 Vaccine
+    - Covishield
+    - Covaxin
+
+- lookup: symptom
+  examples: |
+    - fever
+    - cough
+    - cold
+    - headache
+    - fatigue
+    - body ache
+    - sore throat
+    - breathing difficulty
+    - rash
+    - vomiting
+
+- lookup: location
+  examples: |
+    - Visakhapatanam
+    - Cachar
+    - Hailakandi
+    - Tinsukia
+    - Patna
+    - Samastipur
+    - Baloda Bazar
+    - Janjgir-Champa
+    - Surguja
+    - Navsari
+    - Palwal
+    - Solan
+    - Kupwara
+    - Rajouri
+    - Khunti
+    - Kodarma
+    - Chamarajanagar
+    - Mysuru
+    - Malappuram
+    - Palakkad
+    - Thrissur
+    - Raisen
+    - Chandrapur
+    - Pune
+    - Yavatmal
+    - Churachandpur
+    - West Khasi Hills
+    - Aizawl
+    - Dimapur
+    - Koraput
+    - Rayagada
+    - Sundargarh
+    - Amritsar
+    - Bhilwara
+    - Tonk
+    - Cuddalore
+    - Dindigul
+    - Nagapattinam
+    - Viluppuram
+    - Karimnagar
+    - Mau
+    - Sitapur
+    - Chamoli
+    - North 24 Parganas
+    - Murshidabad
+    - Purba Bardhaman
+    - West Bardhaman
+    - Odisha
