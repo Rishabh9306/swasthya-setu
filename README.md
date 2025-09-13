@@ -28,7 +28,7 @@ Built for the **Smart India Hackathon**, this project is not merely a prototype.
 
 The chatbot's core logic is built on a powerful hybrid model that combines the strengths of machine learning for understanding and explicit rules and code for predictable, safe decision-making. Every user query is intelligently routed down one of two paths.
 
-![Swasthya-Setu Chatbot Architecture Flowchart](https://res.cloudinary.com/dwwihknne/image/upload/v1757409555/swasthya-setu_diagram_cl1kdu.png)
+![Swasthya-Setu Chatbot Architecture Flowchart](https://res.cloudinary.com/dwwihknne/image/upload/v1757745503/swasthya-setu-diagram_w3k55p.png)
 
 ### **Path A: The "Express Lane" (High-Confidence Tasks)**
 This path is for queries that the NLU model recognizes with very high confidence (>85%). These are critical, structured tasks that require immediate and predictable action.
