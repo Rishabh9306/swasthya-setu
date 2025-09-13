@@ -57,3 +57,6 @@ coverage.xml
 # Local configs
 *.env
 *.local
+
+# GCP Credentials
+services/translation-service/gcp-credentials.json
