@@ -14,8 +14,8 @@ logger = logging.getLogger(__name__)
 
 # --- CONFIGURATION ---
 MODEL_NAME = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-CORPUS_FILE = os.path.join(os.path.dirname(__file__), "corpus.jsonl") # Corrected to .jsonl
-INDEX_FILE = os.path.join(os.path.dirname(__file__), "corpus.index")
+CORPUS_FILE = os.path.join(os.path.dirname(__file__), "corpus_new.jsonl")
+INDEX_FILE = os.path.join(os.path.dirname(__file__), "corpus_new.index")
 
 # --- GLOBAL IN-MEMORY STORE ---
 model: Optional[SentenceTransformer] = None

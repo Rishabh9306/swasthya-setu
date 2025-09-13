@@ -228,21 +228,25 @@ def run_kb_pipeline(
     if glossary_result:
         term, definition_dict = glossary_result
         definition = definition_dict.get('def_en', 'No definition found.')
+        reference = definition_dict.get('reference', 'Source not available')
         utter_translated_message(
             dispatcher, language, domain,
             template="utter_found_in_glossary",
             term=term.upper(),
-            definition=definition
+            definition=definition,
+            reference=reference
         )
         return True
 
     kb_result = semantic_kb_handler.search(normalized_text)
     if kb_result:
         answer = kb_result.get('answer_en', "I found information but couldn't format it.")
+        reference = kb_result.get('reference', 'Source not available')
         utter_translated_message(
             dispatcher, language, domain,
             template="utter_found_in_kb",
-            answer=answer
+            answer=answer,
+            reference=reference
         )
         return True
 

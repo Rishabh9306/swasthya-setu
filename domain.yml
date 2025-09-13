@@ -192,12 +192,13 @@ responses:
       {contact_en}
   
   utter_found_in_kb:
-  - text: "{answer}"
+  - text: "{answer}\n\n*Source: [{reference}]({reference})*"
   
   utter_found_in_glossary:
   - text: |
-      Here’s what I found in my health glossary:
-      {term} → {definition}.
+      - **Term:** {term}
+      - **Meaning:** {definition}
+      - **Source:** {reference}
 
   utter_api_down_medicine:
   - text: "I'm having trouble accessing the medicine API right now. Please try again in a moment."

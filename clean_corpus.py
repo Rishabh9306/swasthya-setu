@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
 
 # --- FILE PATHS ---
-INPUT_FILE = "knowledge_base/corpus1.jsonl"
+INPUT_FILE = "knowledge_base/corpus.jsonl"
 OUTPUT_FILE = "knowledge_base/corpus_clean.jsonl"
 BACKUP_FILE = "knowledge_base/corpus_original_backup.jsonl"
 
