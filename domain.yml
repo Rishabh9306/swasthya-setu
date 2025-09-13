@@ -51,6 +51,12 @@ slots:
     mappings:
       - type: from_entity
         entity: pincode
+  language:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
 
 forms:
   vaccination_form:

@@ -172,7 +172,6 @@ nlu:
     - টিকা দেওয়ার সময়সূচী কি?
     - लसीकरण वेळापत्रक काय आहे?
     - தடுப்பூசி அட்டவணை என்ன?
-    # Examples with location only
     - what is the vaccine schedule in [bhubaneswar](location)
     - immunization schedule for [cuttack](location)
     - vaccine list for [mumbai](location)
@@ -399,15 +398,14 @@ nlu:
 
 - intent: ask_medicine_info
   examples: |
-    - what is [crocin](medicine)
+    - what is the medicine [dolo-650](medicine)
     - tell me about [pan-40](medicine)
-    - give me info on [acetaminophen](medicine)
-    - [dolo-650](medicine) details
-    - what is [augmentin](medicine) used for
-    - info on [atorva](medicine)
-    - [metformin](medicine) details please
-    - is [sinarest](medicine) safe?
-    - what is [dolo=650](medicine)
+    - can you give me info on this medicine
+    - what is [augmentin](medicine) used for?
+    - information on [atorva](medicine)
+    - is [sinarest](medicine) safe to use
+    - details on [aspirin](medicine) please
+    - [paracetamol](medicine)
 
 - intent: compare_medicines
   examples: |
@@ -547,3 +545,102 @@ nlu:
     - Purba Bardhaman
     - West Bardhaman
     - Odisha
+
+- lookup: medicine
+  examples: |
+    - crocin
+    - crocin advance
+    - crocin 500
+    - dolo-650
+    - dolo 650
+    - calpol
+    - paracetamol
+    - pcm
+    - tylenol
+    - combiflam
+    - brufen
+    - advil
+    - motrin
+    - aspirin
+    - ecospirin
+    - disprin
+    - voveran
+    - diclo
+    - nise
+    - ultracet
+    - volini
+    - moov
+    - pan-d
+    - pan d
+    - pan-40
+    - pan 40
+    - protonix
+    - rabekind-dsr
+    - rabicip-d
+    - omez
+    - omee
+    - prilosec
+    - aciloc
+    - rantac
+    - zinetac
+    - digene
+    - gelusil
+    - eno
+    - amoxicillin
+    - mox
+    - moxikind-cv
+    - augmentin
+    - azithral
+    - zithromax
+    - azi
+    - cipro
+    - ciproflox
+    - ciplox
+    - oflox
+    - zenflox
+    - ofloxacin
+    - metrogyl
+    - flagyl
+    - doxycycline
+    - norflox
+    - cetirizine
+    - zyrtec
+    - cetzine
+    - allegra
+    - avil
+    - levocet
+    - montair-lc
+    - montek-lc
+    - benadryl
+    - grilinctus
+    - sinarest
+    - vicks action 500
+    - strepsils
+    - metformin
+    - glycomet
+    - glucophage
+    - glimepiride
+    - amaryl
+    - glipizide
+    - januvia
+    - amlodipine
+    - amlong
+    - amlopres
+    - telma
+    - telmisartan
+    - losar
+    - losartan
+    - atorvastatin
+    - atorva
+    - lipitor
+    - clopidogrel
+    - clopitab
+    - plavix
+    - neurobion
+    - supradyn
+    - shelcal
+    - liv-52
+    - ondem
+    - vomikind
+    - domstal
+    - stemetil

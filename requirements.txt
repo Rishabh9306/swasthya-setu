@@ -22,3 +22,12 @@ faiss-cpu
 fastapi
 uvicorn[standard]
 requests
+pydantic<1.10.10,>=1.7.0
+python-multipart==0.0.6
+
+# --- Language Detection ---
+google-cloud-translate==3.11.1
+protobuf==4.23.3
+
+# --- Translate/ Grammar ---
+indic-nlp-library==0.81

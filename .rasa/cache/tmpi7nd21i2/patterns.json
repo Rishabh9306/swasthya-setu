@@ -1,0 +1,22 @@
+[
+  {
+    "name": "disease",
+    "pattern": "(\\bCOVID\\-19\\b|\\bMalaria\\b|\\bTuberculosis\\b|\\bDengue\\b|\\bJaundice\\b|\\bTyphoid\\b|\\bCholera\\b|\\bFlu\\b|\\bChikungunya\\b|\\bMeasles\\b)"
+  },
+  {
+    "name": "vaccine",
+    "pattern": "(\\bBCG\\b|\\bPolio\\b|\\bDPT\\b|\\bHepatitis\\ B\\b|\\bMeasles\\b|\\bMMR\\b|\\bTetanus\\b|\\bCovid\\-19\\ Vaccine\\b|\\bCovishield\\b|\\bCovaxin\\b)"
+  },
+  {
+    "name": "symptom",
+    "pattern": "(\\bfever\\b|\\bcough\\b|\\bcold\\b|\\bheadache\\b|\\bfatigue\\b|\\bbody\\ ache\\b|\\bsore\\ throat\\b|\\bbreathing\\ difficulty\\b|\\brash\\b|\\bvomiting\\b)"
+  },
+  {
+    "name": "location",
+    "pattern": "(\\bVisakhapatanam\\b|\\bCachar\\b|\\bHailakandi\\b|\\bTinsukia\\b|\\bPatna\\b|\\bSamastipur\\b|\\bBaloda\\ Bazar\\b|\\bJanjgir\\-Champa\\b|\\bSurguja\\b|\\bNavsari\\b|\\bPalwal\\b|\\bSolan\\b|\\bKupwara\\b|\\bRajouri\\b|\\bKhunti\\b|\\bKodarma\\b|\\bChamarajanagar\\b|\\bMysuru\\b|\\bMalappuram\\b|\\bPalakkad\\b|\\bThrissur\\b|\\bRaisen\\b|\\bChandrapur\\b|\\bPune\\b|\\bYavatmal\\b|\\bChurachandpur\\b|\\bWest\\ Khasi\\ Hills\\b|\\bAizawl\\b|\\bDimapur\\b|\\bKoraput\\b|\\bRayagada\\b|\\bSundargarh\\b|\\bAmritsar\\b|\\bBhilwara\\b|\\bTonk\\b|\\bCuddalore\\b|\\bDindigul\\b|\\bNagapattinam\\b|\\bViluppuram\\b|\\bKarimnagar\\b|\\bMau\\b|\\bSitapur\\b|\\bChamoli\\b|\\bNorth\\ 24\\ Parganas\\b|\\bMurshidabad\\b|\\bPurba\\ Bardhaman\\b|\\bWest\\ Bardhaman\\b|\\bOdisha\\b)"
+  },
+  {
+    "name": "medicine",
+    "pattern": "(\\bcrocin\\b|\\bcrocin\\ advance\\b|\\bcrocin\\ 500\\b|\\bdolo\\-650\\b|\\bdolo\\ 650\\b|\\bcalpol\\b|\\bparacetamol\\b|\\bpcm\\b|\\btylenol\\b|\\bcombiflam\\b|\\bbrufen\\b|\\badvil\\b|\\bmotrin\\b|\\baspirin\\b|\\becospirin\\b|\\bdisprin\\b|\\bvoveran\\b|\\bdiclo\\b|\\bnise\\b|\\bultracet\\b|\\bvolini\\b|\\bmoov\\b|\\bpan\\-d\\b|\\bpan\\ d\\b|\\bpan\\-40\\b|\\bpan\\ 40\\b|\\bprotonix\\b|\\brabekind\\-dsr\\b|\\brabicip\\-d\\b|\\bomez\\b|\\bomee\\b|\\bprilosec\\b|\\baciloc\\b|\\brantac\\b|\\bzinetac\\b|\\bdigene\\b|\\bgelusil\\b|\\beno\\b|\\bamoxicillin\\b|\\bmox\\b|\\bmoxikind\\-cv\\b|\\baugmentin\\b|\\bazithral\\b|\\bzithromax\\b|\\bazi\\b|\\bcipro\\b|\\bciproflox\\b|\\bciplox\\b|\\boflox\\b|\\bzenflox\\b|\\bofloxacin\\b|\\bmetrogyl\\b|\\bflagyl\\b|\\bdoxycycline\\b|\\bnorflox\\b|\\bcetirizine\\b|\\bzyrtec\\b|\\bcetzine\\b|\\ballegra\\b|\\bavil\\b|\\blevocet\\b|\\bmontair\\-lc\\b|\\bmontek\\-lc\\b|\\bbenadryl\\b|\\bgrilinctus\\b|\\bsinarest\\b|\\bvicks\\ action\\ 500\\b|\\bstrepsils\\b|\\bmetformin\\b|\\bglycomet\\b|\\bglucophage\\b|\\bglimepiride\\b|\\bamaryl\\b|\\bglipizide\\b|\\bjanuvia\\b|\\bamlodipine\\b|\\bamlong\\b|\\bamlopres\\b|\\btelma\\b|\\btelmisartan\\b|\\blosar\\b|\\blosartan\\b|\\batorvastatin\\b|\\batorva\\b|\\blipitor\\b|\\bclopidogrel\\b|\\bclopitab\\b|\\bplavix\\b|\\bneurobion\\b|\\bsupradyn\\b|\\bshelcal\\b|\\bliv\\-52\\b|\\bondem\\b|\\bvomikind\\b|\\bdomstal\\b|\\bstemetil\\b)"
+  }
+]
