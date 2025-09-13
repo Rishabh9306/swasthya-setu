@@ -8,11 +8,14 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch
 import logging
 from typing import Optional, List
+from dotenv import load_dotenv
 import os
 
 # --- Setup Logging ---
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+load_dotenv()
 
 # ============================================================================
 # 1. INITIALIZE CLIENTS AND MODELS
@@ -26,7 +29,7 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 # --- Explicitly load Google Cloud credentials for reliability ---
 try:
     SERVICE_ACCOUNT_FILE = os.path.join(os.path.dirname(__file__), 'gcp-credentials.json')
-    GCP_PROJECT_ID = "swasthya-setu-472002"
+    GCP_PROJECT_ID = os.getenv("GCP_PROJECT_ID")
 
     if not os.path.exists(SERVICE_ACCOUNT_FILE):
         raise FileNotFoundError("GCP credentials file not found.")
